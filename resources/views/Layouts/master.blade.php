@@ -13,11 +13,11 @@
     <link href="/bootstrap3/css/bootstrap.css" rel="stylesheet" />
     <link href="/assets/css/ct-paper.css" rel="stylesheet"/>
     <link href="/assets/css/demo.css" rel="stylesheet" />
-    <link href="/assets/css/all.css" rel="stylesheet"/>
     <link href="/assets/css/examples.css" rel="stylesheet" />
 
     <!-- Custom CSS -->
     <link href="/css/custom.css" rel="stylesheet"/>
+    <link href="/assets/css/all.css" rel="stylesheet"/>
 
     <!--     Fonts and icons     -->
     <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->

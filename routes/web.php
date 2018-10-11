@@ -33,7 +33,7 @@ Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 // Blog
 Route::get('/blog', 'syahrinsethAdminBlogController@index')->name('blogAdmin.index');
 Route::get('/blog/create-post', 'syahrinsethAdminBlogController@create')->name('blogAdmin.create');
-Route::post('/blog/{slug}', 'syahrinsethAdminBlogController@store')->name('blogAdmin.store');
+Route::post('/blog/store-post', 'syahrinsethAdminBlogController@store')->name('blogAdmin.store');
 Route::delete('/blog/{slug}', 'syahrinsethAdminBlogController@destroy')->name('blogAdmin.destroy');
 Route::get('/blog/{slug}/', 'syahrinsethAdminBlogController@show')->name('blogAdmin.show');
 

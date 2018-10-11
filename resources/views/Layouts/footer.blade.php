@@ -17,7 +17,7 @@
                     @if(Auth::user())
                         @if(Auth::user()->user_type == 'admin')
                         <a href="{{route('dashboard')}}">
-                           Admin Page
+                           Dashboard
                         </a>
                         @endif
                     @else

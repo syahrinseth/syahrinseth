@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="../admin-assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Paper Dashboard 2 by Creative Tim
+    Admin - @yield('title')
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -18,14 +18,21 @@
   <link href="../admin-assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../admin-assets/demo/demo.css" rel="stylesheet" />
+
+<!-- Font Awesome file -->
+  <link href="/assets/css/all.css" rel="stylesheet"/>
+
+  <!-- HTML editor -->
+  <link href="/assets/dist/summernote-lite.css" rel="stylesheet"/>
 </head>
 
 <body class="">
+
   <div class="wrapper ">
     @include('layouts.sidebar-admin')
     <div class="main-panel">
       @include('layouts.nav-admin')
-      
+
       @yield('content')
 
       @include('layouts.footer-admin')
@@ -48,6 +55,8 @@
   <script src="../admin-assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
   <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
   <script src="../admin-assets/demo/demo.js"></script>
+  <!-- HTML text editor -->
+  <script src="/assets/dist/summernote-lite.js" type="text/javascript"></script>
   <script>
     $(document).ready(function() {
       // Javascript method's body can be found in admin-assets/admin-assets-for-demo/js/demo.js

@@ -17,11 +17,11 @@ class MasterBlog extends Migration
         Schema::create('master_blog', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->string('title');
             $table->text('body')->nullable();
+            $table->string('cover_img')->nullable();
             $table->string('author')->nullable();
-            $table->integer('bc_id')->unsigned();
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ class MasterBlog extends Migration
      */
     public function down()
     {
-        //
+        // Schema::dropIfExists('master_blog');
     }
 }

@@ -16,7 +16,7 @@ class BlogComments extends Migration
         // blog_comments table migration
         Schema::create('blog_comments', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('mb_id')->unsigned();
+            $table->integer('masterblog_id')->unsigned();
             $table->string('name')->nullable();
             $table->text('body');
             $table->integer('rating')->default(0);
@@ -31,6 +31,6 @@ class BlogComments extends Migration
      */
     public function down()
     {
-        //
+        // Schema::dropIfExists('blog_comments');
     }
 }

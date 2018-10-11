@@ -3,9 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use App\MasterBlog;
 class syahrinsethAdminBlogController extends Controller
 {
+
+    public function __construct()
+    {
+
+        $this->middleware('auth');
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +21,6 @@ class syahrinsethAdminBlogController extends Controller
      */
     public function index()
     {
-        // index page for blog
         return view('adminblog.index');
     }
 
@@ -24,7 +31,7 @@ class syahrinsethAdminBlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('adminblog.create');
     }
 
     /**
@@ -35,7 +42,25 @@ class syahrinsethAdminBlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(Auth::user()->user_type != 'visitor'){
+            $this->validate(request(), [
+                'title' => 'required|unique:master_blog,title',
+            ]);
+
+            $master_blog = new MasterBlog;
+            $master_blog->title = $request->title;
+            $master_blog->slug = strtolower(str_replace(" ", "-", $request->title));
+            $master_blog->body = $request->body;
+            $request->input('category');
+
+
+
+
+            $request->session()->flash('alert-success', 'Success!');
+            return back();
+        }else{
+            return abort(404);
+        }
     }
 
     /**

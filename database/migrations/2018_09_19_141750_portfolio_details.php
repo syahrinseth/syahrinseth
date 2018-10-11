@@ -16,13 +16,13 @@ class PortfolioDetails extends Migration
         // table for portfolio_details table
         Schema::create('portfolio_details', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('mp_id')->unsigned();
+            $table->integer('masterportfolio_id')->unsigned();
             $table->string('project_img');
             $table->boolean('cover_img')->default(false);
             $table->timestamps();
         });
 
-        
+
     }
 
     /**
@@ -32,6 +32,6 @@ class PortfolioDetails extends Migration
      */
     public function down()
     {
-        //
+        // Schema::dropIfExists('portfolio_details');
     }
 }

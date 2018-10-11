@@ -16,27 +16,30 @@ class BlogCategories extends Migration
         // blog_categories table migration
         Schema::create('blog_categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('category');
+            $table->integer('masterblog_id')->unsigned();
+            $table->string('category')->unique();
             $table->string('description')->nullable();
             $table->timestamps();
         });
 
         // alter table
         Schema::table('portfolio_details', function (Blueprint $table) {
-            $table->foreign('mp_id')->references('id')->on('master_portfolio');
+            $table->foreign('masterportfolio_id')->references('id')->on('master_portfolio');
         });
         Schema::table('master_blog', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('bc_id')->references('id')->on('blog_categories');
         });
         Schema::table('blog_images', function (Blueprint $table) {
-            $table->foreign('mb_id')->references('id')->on('master_blog');
+            $table->foreign('masterblog_id')->references('id')->on('master_blog');
         });
         Schema::table('blog_comments', function (Blueprint $table) {
-            $table->foreign('mb_id')->references('id')->on('master_blog');
+            $table->foreign('masterblog_id')->references('id')->on('master_blog');
         });
         Schema::table('blog_likes', function (Blueprint $table) {
-            $table->foreign('mb_id')->references('id')->on('master_blog');
+            $table->foreign('masterblog_id')->references('id')->on('master_blog');
+        });
+        Schema::table('blog_categories', function (Blueprint $table) {
+            $table->foreign('masterblog_id')->references('id')->on('master_blog');
         });
     }
 
@@ -47,6 +50,6 @@ class BlogCategories extends Migration
      */
     public function down()
     {
-        //
+        // Schema::dropIfExists('blog_categories');
     }
 }

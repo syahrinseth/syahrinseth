@@ -2,15 +2,16 @@
 @section('title', 'Home')
 @section('content')
 <div class="wrapper">
-        <div class="landing-header" style="background-image: url('../assets/paper_img/red.jpg');">
+        <div class="landing-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(300, 300, 300, 0.3)),url('../assets/paper_img/syahrinseth-background1.jpg');">
             <div class="container">
                 <div class="motto text-primary">
                     <h1 class="title-uppercase text-primary">Syahrin Seth</h1>
-                    <h3 class="text-primary">Web Application Developer</h3>
+                    <h3 class="text-primary">Web Application Developer.</h3>
+                    <h5 class="text-primary">I build things with code.</h5>
                     <br />
                     <!-- <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-primary"><i class="fa fa-play"></i>Watch video</a> -->
-                    <p>What do you need?</p>
-                    <a class="btn btn-primary">Custom Web Application Development</a>
+                    <p class="text-primary">What do you need?</p>
+                    <a class="btn btn-primary">Web Application Development</a>
                     <a class="btn btn-primary">Wordpress CMS</a>
                     <!-- <a class="btn btn-primary">Mobile Application Development</a> -->
                 </div>
@@ -21,19 +22,27 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                            <h2>Custom Web Application Development</h2>
-                            <h5>I design and develop responsive websites or web applications that looks great on your desktop computer, tablet and mobile device.</h5>
+                            <h2 class="text-center">Services</h2>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div><i class="fas fa-laptop-code fa-7x"></i></div>
+                            <h2>Web Application Development</h2>
+                            <h5>I design and develop responsive websites and web applications that looks great on your desktop computer, tablet and mobile device.</h5>
                             <br />
-                            <a href="#" class="btn btn-primary">See Details</a>
+                            <!-- <a href="#" class="btn">See Details</a> -->
                         </div>
                         <!-- end row -->
 
                         <div class="row">
                             <div class="col-md-8 col-md-offset-2">
+                                <div><i class="fab fa-wordpress fa-7x"></i></div>
                                 <h2>Wordpress CMS</h2>
                                 <h5>Wordpress is web software that allows you to manage your own content, log into your website to blog, and upload media and update your own website. The websites I create incorporate Wordpress so you can change your site anytime you want, at no cost.</h5>
                                 <br />
-                                <a href="#" class="btn btn-primary">See Details</a>
+                                <!-- <a href="#" class="btn">See Details</a> -->
                             </div>
                         </div>
                         <!-- end row -->
@@ -106,27 +115,84 @@
             <div class="section section-dark text-center landing-section">
                 <div class="container">
                     <h2>About Me</h2>
-                    <div class="col-md-12">
+                    <div class="col-md-10 col-md-offset-1">
                         <div class="team-player">
                             <img src="../assets/paper_img/syahrinseth2.jpg" alt="Thumbnail Image" class="img-circle img-responsive">
                             <h5>Syahrin Seth <br /><small class="text-muted">Web Application Developer</small></h5>
-                            <p>I'm Syah, a Web Application Developer and Photographer based in Shah Alam, MY.</p>
+                            <!-- <h6>I'm Syah, a Web Application Developer and Photographer based in Shah Alam, MY.</h6> -->
+                            <p class="text-center">Hello, my name is Syahrin Seth, and I'm a Web Developer. I graduated from Management and Science University and acquired a Bachelor in Bioinformatics (Hons). I work at University Malaya for 3 months and develop Kids Fracture System by using PHP with Laravel Framework. The application objectives are to store patients database and predict the healing process of the patients to help doctors make a decision for treating the patients. Later, I work as a freelance web developer under Rich Core Media and design a website with e-commerce include for Noor Arfa by using Wordpress. Later, I work at PheonTech Sdn. Bhd. as a web developer. My recent projects involve in developing a websites and web applications for General Electric (GE POWER) to improve their business by using technology such as PHP (Laravel Framework), HTML/CSS (Bootstrap), Javascript (jQuery, React Native), SQL (MySQL, SQL Server), and C# ASP.NET Core.
+                            *I have a year of experience in Web Development and very skilled in HTML/CSS (Bootstrap), Javascript (jQuery), PHP (Laravel 5) and  MySQL.
+                            *I have a respect for working hour and deadline.</p>
                             <div class="row">
-                                <div class="col-md-3">
-
-                                </div>
-                                <div class="col-md-9 text-left">
-                                    <h4>Skills Highlight:</h4>
-                                    <ul>
-                                        <li>PHP (Laravel 5)</li>
-                                        <li>HTML 5</li>
-                                        <li>CSS 3</li>
-                                        <li>Bootstrap 4</li>
-                                        <li>Javascript (jQuery, React, React Native)</li>
-                                        <li>SQL (MySQL, SQL Server)</li>
-                                        <li>C# (Dotnet Core Entity Framework)</li>
-                                        <li>Git (GitHub)</li>
-                                    </ul>
+                                <div class="col-md-10 col-md-offset-1">
+                                    <h4>Tech Skills Highlights</h4>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class="">
+                                                <tr>
+                                                    <th> Technologies </th>
+                                                    <th> Skills </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="text-left">
+                                                    <td> HTML 5 </td>
+                                                    <td> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> </td>
+                                                </tr>
+                                                <tr class="text-left">
+                                                    <td> CSS 3 </td>
+                                                    <td> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </td>
+                                                </tr>
+                                                <tr class="text-left">
+                                                    <td> Bootstrap 4 </td>
+                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></i><i class="far fa-star"></i> </td>
+                                                </tr>
+                                                <tr class="text-left">
+                                                    <td> Javascript </td>
+                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </td>
+                                                </tr>
+                                                <tr class="text-left">
+                                                    <td> PHP </td>
+                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></i><i class="far fa-star"></i> </td>
+                                                </tr>
+                                                <tr class="text-left">
+                                                    <td> C# </td>
+                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i> </td>
+                                                </tr>
+                                                <tr class="text-left">
+                                                    <td> SQL </td>
+                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </td>
+                                                </tr>
+                                                <tr class="text-left">
+                                                    <td> jQuery  </td>
+                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> </td>
+                                                </tr>
+                                                <tr class="text-left">
+                                                    <td> Laravel 5  </td>
+                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> </td>
+                                                </tr>
+                                                <tr class="text-left">
+                                                    <td> ASP.NET Core MVC  </td>
+                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </td>
+                                                </tr>
+                                                <tr class="text-left">
+                                                    <td> React Native  </td>
+                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </td>
+                                                </tr>
+                                                <tr class="text-left">
+                                                    <td> MySQL  </td>
+                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></i><i class="far fa-star"></i> </td>
+                                                </tr>
+                                                <tr class="text-left">
+                                                    <td> SQLite  </td>
+                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></i><i class="far fa-star"></i> </td>
+                                                </tr>
+                                                <tr class="text-left">
+                                                    <td> SQL Server  </td>
+                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </td>
+                                                </tr>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -135,6 +201,21 @@
             </div>
 
 
+            <div class="section section-light-brown landing-section text-center">
+                <div class="container">
+                    <div class="row">
+                        <h2>Clients</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="https://www.ge.com/power" target="_blank"><img src="/assets/img/clients/syahrinseth-gepower.png" style="width:250px"></a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="http://www.pheontech.com" target="_blank"><img src="/assets/img/clients/syahrinseth-pheontech.png" style="width:250px"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
             <div class="section landing-section">
