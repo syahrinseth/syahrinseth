@@ -2,7 +2,11 @@
         <div class="container">
             <nav class="pull-left">
                 <ul>
-
+                    <li>
+                        <a href="#">
+                            Services
+                        </a>
+                    </li>
                     <li>
                         <a href="#">
                             Portfolio
@@ -26,15 +30,15 @@
                         </a>
                     @endif
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#">
                             Licenses
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </nav>
             <div class="copyright pull-right">
-                &copy; 2018, made with <i class="fa fa-heart heart"></i> by Syahrin Seth
+                &copy; 2018, made with <i class="fa fa-heart heart"></i> by Syahrin Seth v1.0.0
             </div>
         </div>
     </footer>

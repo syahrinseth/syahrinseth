@@ -25,16 +25,45 @@
         <div class="collapse navbar-collapse" id="navigation-example-2">
           <ul class="nav navbar-nav navbar-right">
             <li>
-                <a href="#" class="">Home</a>
+                <a href="{{route('/')}}" class="">Home</a>
             </li>
-            <li>
-                <a href="#" class="">Services</a>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Services <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                <li><a href="{{route('/')}}#webdev">Web Development</a></li>
+                <li><a href="{{route('/')}}#wordpress">Wordpress CMS</a></li>
+                <!-- <li><a href="{{route('/')}}#graphicdesign">Graphic Design</a></li> -->
+                </ul>
             </li>
-            <li>
-                <a href="#" class="">Portfolio</a>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Portfolio <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                <li><a href="#">Web Development</a></li>
+                <li><a href="#">Photo Gallery</a></li>
+                <!-- <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li class="divider"></li>
+                <li><a href="#">One more separated link</a></li> -->
+                </ul>
             </li>
             <li>
                 <a href="#" class="">Blog</a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Contact <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                <li><a href="{{route('/')}}#contact">Contact Me</a></li>
+                <li class="divider"></li>
+                <li><a href="https://www.instagram.com/syahrinseth" target="_blank" class="">Instagram <i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/syahrinseth/" target="_blank" class="">Linkedin <i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://www.github.com/syahrinseth" target="_blank" class="">GitHub <i class="fab fa-github"></i></a></li>
+                <!-- <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li class="divider"></li>
+                <li><a href="#">One more separated link</a></li> -->
+                </ul>
             </li>
             <!-- <li class="dropdown">
 
@@ -59,15 +88,7 @@
             </li> -->
 
 
-            <li>
-                <a href="https://www.instagram.com/syahrinseth" target="_blank" class=""><i class="fab fa-instagram"></i></a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/syahrinseth/" target="_blank" class=""><i class="fab fa-linkedin"></i></a>
-            </li>
-            <li>
-                <a href="https://www.github.com/syahrinseth" target="_blank" class=""><i class="fab fa-github"></i></a>
-            </li>
+
             <!-- <li>
                 <a href="https://www.youtube.com/syahrinseth" target="_blank" class=""><i class="fa fa-youtube"></i></a>
             </li> -->

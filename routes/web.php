@@ -10,12 +10,20 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
 // Website
 Route::get('/', 'syahrinsethController@home')->name('/');
+
 // Contact
 Route::post('/contact/send', 'syahrinsethController@contactSend')->name('contactSend');
+
+// Blog
+Route::get('/blog/{slug}', 'syahrinsethAdminBlogController@show')->name('show.blog');
+
+// Portfolio
+Route::get('/portfolio', 'syahrinsethPortfolioController@index')->name('index.portfolio');
+Route::get('/portfolio/{id}', 'syahrinsethPortfolioController@show')->name('show.portfolio');
+
+
 
 
 
@@ -31,9 +39,29 @@ Route::get('/logout', function(){
 // Dashboard
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 // Blog
-Route::get('/blog', 'syahrinsethAdminBlogController@index')->name('blogAdmin.index');
-Route::get('/blog/create-post', 'syahrinsethAdminBlogController@create')->name('blogAdmin.create');
-Route::post('/blog/store-post', 'syahrinsethAdminBlogController@store')->name('blogAdmin.store');
-Route::delete('/blog/{slug}', 'syahrinsethAdminBlogController@destroy')->name('blogAdmin.destroy');
-Route::get('/blog/{slug}/', 'syahrinsethAdminBlogController@show')->name('blogAdmin.show');
+Route::get('/admin-blog', 'syahrinsethAdminBlogController@index')->name('index.adminblog');
+Route::get('/admin-blog/create-post', 'syahrinsethAdminBlogController@create')->name('create.adminblog');
+Route::post('/admin-blog/store-post', 'syahrinsethAdminBlogController@store')->name('store.adminblog');
+Route::get('/admin-blog/edit-post/{id}', 'syahrinsethAdminBlogController@edit')->name('edit.adminblog');
+Route::post('/admin-blog/update-post/{id}', 'syahrinsethAdminBlogController@update')->name('update.adminblog');
+Route::get('/admin-blog/delete/{id}', 'syahrinsethAdminBlogController@delete')->name('delete.adminblog');
+Route::post('/admin-blog/destroy/{id}', 'syahrinsethAdminBlogController@destroy')->name('destroy.adminblog');
+Route::get('/admin-blog/{slug}/', 'syahrinsethAdminBlogController@show')->name('show.adminblog');
 
+// Message
+Route::get('/admin-message', 'syahrinsethAdminMessageController@index')->name('index.adminmessage');
+Route::get('/admin-message/{id}', 'syahrinsethAdminMessageController@show')->name('show.adminmessage');
+Route::get('/admin-message/delete/{id}', 'syahrinsethAdminMessageController@delete')->name('delete.adminmessage');
+Route::post('/admin-message/destroy/{id}', 'syahrinsethAdminMessageController@destroy')->name('destroy.adminmessage');
+Route::get('admin-message/ajax/{id}', 'syahrinsethAdminMessageController@ajax')->name('ajax.adminmessage');
+
+// Portfolio
+Route::get('admin-portfolio', 'syahrinsethAdminPortfolioController@index')->name('index.adminportfolio');
+Route::get('admin-portfolio/create', 'syahrinsethAdminPortfolioController@create')->name('create.adminportfolio');
+Route::post('admin-portfolio/store', 'syahrinsethAdminPortfolioController@store')->name('store.adminportfolio');
+Route::get('admin-portfolio/{id}', 'syahrinsethAdminPortfolioController@show')->name('show.adminportfolio');
+Route::get('admin-portfolio/edit/{id}', 'syahrinsethAdminPortfolioController@edit')->name('edit.adminportfolio');
+Route::post('admin-portfolio/update/{id}', 'syahrinsethAdminPortfolioController@update')->name('update.adminportfolio');
+Route::get('admin-portfolio/delete/{id}', 'syahrinsethAdminPortfolioController@delete')->name('delete.adminportfolio');
+Route::post('admin-portfolio/destroy/{id}', 'syahrinsethAdminPortfolioController@destroy')->name('destroy.adminportfolio');
+// --------------------------------------------------------------------------

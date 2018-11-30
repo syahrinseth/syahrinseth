@@ -19,8 +19,16 @@
     <link href="/css/custom.css" rel="stylesheet"/>
     <link href="/assets/css/all.css" rel="stylesheet"/>
 
-    <!--     Fonts and icons     -->
-    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <!--     Data Tables     -->
+    <link rel="stylesheet" type="text/css" href="/DataTables/datatables.min.css"/>
+    <style>
+        .cover-img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+        }
+    </style>
 
 </head>
 <body>
@@ -46,5 +54,8 @@
 <script src="/assets/js/bootstrap-datepicker.js"></script>
 
 <script src="/assets/js/ct-paper.js"></script>
+
+<script type="text/javascript" src="/DataTables/datatables.min.js"></script>
+
 
 </html>

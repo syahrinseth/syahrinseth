@@ -16,11 +16,18 @@ class PortfolioDetails extends Migration
         // table for portfolio_details table
         Schema::create('portfolio_details', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('masterportfolio_id')->unsigned();
+            $table->integer('masterportfolios_id')->unsigned();
             $table->string('project_img');
-            $table->boolean('cover_img')->default(false);
             $table->timestamps();
         });
+        if (Schema::hasTable('master_portfolios')) {
+            Schema::table('portfolio_details', function (Blueprint $table) {
+                $table->foreign('masterportfolios_id')
+                ->references('id')
+                ->on('master_portfolios')
+                ->onDelete('cascade');
+            });
+        }
 
 
     }
@@ -32,6 +39,11 @@ class PortfolioDetails extends Migration
      */
     public function down()
     {
-        // Schema::dropIfExists('portfolio_details');
+        if (Schema::hasTable('portfolio_details')) {
+            Schema::table('portfolio_details', function (Blueprint $table) {
+                $table->dropForeign(['masterportfolios_id']);
+            });
+        }
+        Schema::dropIfExists('portfolio_details');
     }
 }

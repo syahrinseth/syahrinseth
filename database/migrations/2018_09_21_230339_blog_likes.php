@@ -16,11 +16,18 @@ class BlogLikes extends Migration
         // blog_likes table migration
         Schema::create('blog_likes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('masterblog_id')->unsigned();
+            $table->integer('masterblogs_id')->unsigned();
             $table->string('name')->default('visitor');
             $table->boolean('like')->default(true);
             $table->timestamps();
         });
+        if (Schema::hasTable('master_blogs')) {
+            Schema::table('blog_likes', function (Blueprint $table) {
+                $table->foreign('masterblogs_id')->references('id')
+                ->on('master_blogs')
+                ->onDelete('cascade');
+            });
+        }
     }
 
     /**
@@ -30,6 +37,11 @@ class BlogLikes extends Migration
      */
     public function down()
     {
-        // Schema::dropIfExists('blog_likes');
+        if (Schema::hasTable('blog_likes')) {
+            Schema::table('blog_likes', function (Blueprint $table) {
+                $table->dropForeign(['masterblogs_id']);
+            });
+        }
+        Schema::dropIfExists('blog_likes');
     }
 }

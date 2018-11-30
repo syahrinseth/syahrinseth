@@ -38,15 +38,13 @@
               </li> -->
               <li class="nav-item btn-rotate dropdown">
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img src="../assets/paper_img/syahrinseth2.jpg" alt="Thumbnail Image" class="img-circle img-responsive" width="30px">
+                  <img src="/assets/paper_img/syahrinseth2.jpg" alt="Thumbnail Image" class="img-circle img-responsive" width="30px">
                   <p>
                     <span class="d-lg-none d-md-block">Syahrin Seth</span>
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <a class="dropdown-item" href="{{route('logout')}}">Logout</a>
                 </div>
               </li>
               <!-- <li class="nav-item">

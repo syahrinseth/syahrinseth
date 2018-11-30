@@ -1,18 +1,22 @@
 @extends('Layouts.master')
 @section('title', 'Home')
 @section('content')
+@include('Layouts.message')
+@include('Layouts.validate')
 <div class="wrapper">
-        <div class="landing-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(300, 300, 300, 0.3)),url('../assets/paper_img/syahrinseth-background1.jpg');">
+        <div class="landing-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url('../assets/paper_img/coding-wallpaper.jpg');">
             <div class="container">
-                <div class="motto text-primary">
-                    <h1 class="title-uppercase text-primary">Syahrin Seth</h1>
-                    <h3 class="text-primary">Web Application Developer.</h3>
-                    <h5 class="text-primary">I build things with code.</h5>
+                <div class="motto text-white text-center">
+                    <h1 class="text-white text-inline">Hello! I'm </h1> <h1 class="title-uppercase text-inline">{ <code>Syahrin Seth</code> }.</h1>
+                    <br>
+                    <br>
+                    <h2 class="text-white text-inline">
+                    I'm a</h2><h2 class="text-white text-inline"> Full Stack Web Developer.</h2>
+                    <h4 class="text-white">I build things with code.</h4>
                     <br />
                     <!-- <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-primary"><i class="fa fa-play"></i>Watch video</a> -->
-                    <p class="text-primary">What do you need?</p>
-                    <a class="btn btn-primary">Web Application Development</a>
-                    <a class="btn btn-primary">Wordpress CMS</a>
+                    <!-- <a class="btn btn-danger">Web Application Development</a>
+                    <a class="btn btn-danger">Wordpress CMS</a> -->
                     <!-- <a class="btn btn-primary">Mobile Application Development</a> -->
                 </div>
             </div>
@@ -27,36 +31,29 @@
                     </div>
                     <br>
                     <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
+                        <div class="col-md-6" id="webdev">
                             <div><i class="fas fa-laptop-code fa-7x"></i></div>
                             <h2>Web Application Development</h2>
-                            <h5>I design and develop responsive websites and web applications that looks great on your desktop computer, tablet and mobile device.</h5>
+                            <h5>I design and develop responsive websites and web applications that looks great on your desktop computer, tablet and mobile devices.</h5>
                             <br />
-                            <!-- <a href="#" class="btn">See Details</a> -->
+                            <a href="{{route('/')}}#contact" class="btn btn-primary">Contact Me</a>
                         </div>
-                        <!-- end row -->
-
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2">
-                                <div><i class="fab fa-wordpress fa-7x"></i></div>
+                        <div class="col-md-6" id="wordpress">
+                            <div><i class="fab fa-wordpress fa-7x"></i></div>
                                 <h2>Wordpress CMS</h2>
                                 <h5>Wordpress is web software that allows you to manage your own content, log into your website to blog, and upload media and update your own website. The websites I create incorporate Wordpress so you can change your site anytime you want, at no cost.</h5>
                                 <br />
-                                <!-- <a href="#" class="btn">See Details</a> -->
-                            </div>
+                                <a href="{{route('/')}}#contact" class="btn btn-primary">Contact Me</a>
                         </div>
-                        <!-- end row -->
-
-                        <!-- <div class="row">
-                            <div class="col-md-8 col-md-offset-2">
+                        <!-- <div class="col-md-4" id="graphicdesign">
+                            <div><i class="fas fa-pencil-alt fa-7x"></i></div>
                                 <h2>Graphic Design</h2>
                                 <h5>Graphic design is the process of visual communication and problem-solving through the use of typography, photography and illustration. I create an awesome design that catches viewers eyes on printable media to help boost client business.</h5>
                                 <br />
-                                <a href="#" class="btn btn-primary">See Details</a>
-                            </div>
-                        </div>
-                        end row -->
+                                <a href="{{route('/')}}#contact" class="btn btn-primary">Contact Me</a>
+                        </div> -->
                     </div>
+
                 </div>
             </div>
 
@@ -220,7 +217,7 @@
 
             <div class="section landing-section">
                 <div class="container">
-                    <div class="row">
+                    <div class="row" id="contact">
                         <div class="col-md-8 col-md-offset-2">
                             <h2 class="text-center">Keep in touch?</h2>
                             <form class="contact-form" method="post" action="{{route('contactSend')}}">
@@ -228,25 +225,25 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>Name</label>
-                                        <input class="form-control" placeholder="Name">
+                                        <input class="form-control" placeholder="Name" name="name">
                                     </div>
                                     <div class="col-md-6">
                                         <label>Email</label>
-                                        <input class="form-control" placeholder="Email">
+                                        <input class="form-control" placeholder="Email" name="email" required>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>Phone</label>
-                                        <input class="form-control" placeholder="Phone">
+                                        <input class="form-control" placeholder="Phone" name="phone">
                                     </div>
                                     <div class="col-md-6">
                                         <label>Company</label>
-                                        <input class="form-control" placeholder="Company">
+                                        <input class="form-control" placeholder="Company" name="company">
                                     </div>
                                 </div>
                                 <label>Message</label>
-                                <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+                                <textarea class="form-control" rows="4" placeholder="Message" name="message"></textarea>
                                 <div class="row">
                                     <div class="col-md-4 col-md-offset-4">
                                         <button class="btn btn-primary btn-block btn-lg">Send Message</button>

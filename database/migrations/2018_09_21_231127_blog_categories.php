@@ -16,31 +16,29 @@ class BlogCategories extends Migration
         // blog_categories table migration
         Schema::create('blog_categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('masterblog_id')->unsigned();
-            $table->string('category')->unique();
-            $table->string('description')->nullable();
+            $table->integer('masterblogs_id')->unsigned();
+            $table->integer('mastercategories_id')->unsigned();
             $table->timestamps();
         });
 
-        // alter table
-        Schema::table('portfolio_details', function (Blueprint $table) {
-            $table->foreign('masterportfolio_id')->references('id')->on('master_portfolio');
-        });
-        Schema::table('master_blog', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
-        });
-        Schema::table('blog_images', function (Blueprint $table) {
-            $table->foreign('masterblog_id')->references('id')->on('master_blog');
-        });
-        Schema::table('blog_comments', function (Blueprint $table) {
-            $table->foreign('masterblog_id')->references('id')->on('master_blog');
-        });
-        Schema::table('blog_likes', function (Blueprint $table) {
-            $table->foreign('masterblog_id')->references('id')->on('master_blog');
-        });
-        Schema::table('blog_categories', function (Blueprint $table) {
-            $table->foreign('masterblog_id')->references('id')->on('master_blog');
-        });
+
+
+        if (Schema::hasTable('master_blogs')) {
+            Schema::table('blog_categories', function(Blueprint $table){
+                $table->foreign('masterblogs_id')
+                ->references('id')
+                ->on('master_blogs')
+                ->onDelete('cascade');
+            });
+        }
+        if (Schema::hasTable('master_categories')) {
+            Schema::table('blog_categories', function(Blueprint $table){
+                $table->foreign('mastercategories_id')
+                ->references('id')
+                ->on('master_categories')
+                ->onDelete('cascade');
+            });
+        }
     }
 
     /**
@@ -50,6 +48,11 @@ class BlogCategories extends Migration
      */
     public function down()
     {
-        // Schema::dropIfExists('blog_categories');
+        if (Schema::hasTable('master_categories')) {
+            Schema::table('master_categories', function (Blueprint $table) {
+                $table->dropForeign(['masterblogs_id', ]);
+            });
+        }
+        Schema::dropIfExists('blog_categories');
     }
 }

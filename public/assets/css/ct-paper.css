@@ -3041,6 +3041,7 @@ textarea.form-control {
   [class*="navbar-"] .navbar-nav .open .dropdown-menu > li > a:focus {
     opacity: .7;
     background: transparent;
+    color: #66615B;
   }
   [class*="navbar-"] .navbar-nav.navbar-nav .open .dropdown-menu > li > a:active {
     opacity: 1;
@@ -3350,4 +3351,12 @@ textarea.form-control {
 
 .pointer{
   cursor: pointer;
+}
+
+.text-white{
+    color: #DDDDDD;
+}
+
+.text-inline{
+    display: inline;
 }

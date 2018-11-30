@@ -59,7 +59,9 @@ class syahrinsethController extends Controller
     public function contactSend(Request $request)
     {
         // post method from client (contact form)
-        
+        $this->validate(request(), [
+            'email'=>'required|unique:contact,email'
+        ]);
         $contact = new Contact;
         $contact->name = $request->name;
         $contact->email = $request->email;
