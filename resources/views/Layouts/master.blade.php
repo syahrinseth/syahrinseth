@@ -21,6 +21,11 @@
 
     <!--     Data Tables     -->
     <link rel="stylesheet" type="text/css" href="/DataTables/datatables.min.css"/>
+
+    <!-- Portfolio UI CSS File -->
+    <link rel="stylesheet" href="/css/basscss.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
     <style>
         .cover-img{
             display: block;
@@ -57,5 +62,9 @@
 
 <script type="text/javascript" src="/DataTables/datatables.min.js"></script>
 
+<!-- Portfolio UI JS File -->
+<script src="/js/index.js"></script>
+
+@yield('custom-javascript')
 
 </html>

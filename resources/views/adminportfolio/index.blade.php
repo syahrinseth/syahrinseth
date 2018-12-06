@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Portfolio</h4>
-                    <a href="{{route('create.adminportfolio')}}" class="btn btn-simple btn-sm"><i class="fas fa-plus"></i> New Post</a>
+                    <a href="{{route('create.adminportfolio')}}" class="btn btn-simple btn-sm"><i class="fas fa-plus"></i> New Portfolio</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -48,7 +48,7 @@
                             <a class="nav-link btn btn-simple btn-sm nc-icon nc-settings-gear-65" href="http://example.com" id="navbarDropdownMenuLinkCustom" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLinkCustom">
-                                <a class="dropdown-item" href="{{route('show.adminportfolio', [ 'id' => $item->id ])}}" target="_blank">View</a>
+                                <!-- <a class="dropdown-item" href="route('show.adminportfolio', [ 'id' => $item->id ])" target="_blank">View</a> -->
                                 <a class="dropdown-item" href="{{route('edit.adminportfolio', [ 'id' => $item->id ])}}">Edit</a>
                                 <a class="dropdown-item" href="{{route('delete.adminportfolio', ['id' => $item->id])}}">Delete</a>
                             </div>

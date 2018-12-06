@@ -22,6 +22,7 @@ Route::get('/blog/{slug}', 'syahrinsethAdminBlogController@show')->name('show.bl
 // Portfolio
 Route::get('/portfolio', 'syahrinsethPortfolioController@index')->name('index.portfolio');
 Route::get('/portfolio/{id}', 'syahrinsethPortfolioController@show')->name('show.portfolio');
+Route::get('/portfolio/ajax/{id}', 'syahrinsethPortfolioController@ajaxShow')->name('ajaxShow.portfolio');
 
 
 

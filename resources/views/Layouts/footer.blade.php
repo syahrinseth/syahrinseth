@@ -3,20 +3,20 @@
             <nav class="pull-left">
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="{{route('/')}}#services">
                             Services
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{route('index.portfolio')}}">
                             Portfolio
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#">
                            Blog
                         </a>
-                    </li>
+                    </li> -->
                     <li>
                     @if(Auth::user())
                         @if(Auth::user()->user_type == 'admin')

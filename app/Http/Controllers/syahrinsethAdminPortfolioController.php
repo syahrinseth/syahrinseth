@@ -34,12 +34,14 @@ class syahrinsethAdminPortfolioController extends Controller
         $this->validate(request(), [
             'project_name' => 'required',
             'project_desc' => 'required',
-            'cover_image' => 'required|mimes:jpeg,png,jpg,gif'
+            'project_type' => 'required',
+            'cover_image' => 'required|mimes:jpeg,png,jpg,gif|max:10000'
         ]);
         $master_portfolio = new MasterPortfolio;
         $master_portfolio->project_name = $request->project_name;
         $master_portfolio->project_desc = $request->project_desc;
         $master_portfolio->client = $request->client;
+        $master_portfolio->project_type = strtolower(str_replace(' ', '_', $request->project_type));
         if($request->cover_image){
 
             // Handle File Upload
@@ -79,6 +81,7 @@ class syahrinsethAdminPortfolioController extends Controller
         $master_portfolio->project_name = $request->project_name;
         $master_portfolio->project_desc = $request->project_desc;
         $master_portfolio->client = $request->client;
+        $master_portfolio->project_type = strtolower(str_replace(' ', '_', $request->project_type));
         if($request->cover_image){
 
             // Handle File Upload

@@ -61,6 +61,10 @@ body {
             <label for="title">Body:</label>
             <textarea name="project_desc" id="summernote" class="form-control">{!!$portfolio->project_desc!!}</textarea>
         </div>
+        <div class="form-group">
+            <label for="project_type">Project Type</label>
+            <input type="text" class="form-control" name="project_type" placeholder="eg: Websites" value="{{ucfirst($portfolio->project_type)}}">
+        </div>
         <div class="row">
             <div class="col-md-6">
                 <div class="">
@@ -79,7 +83,7 @@ body {
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
                 <div class="">
                     <label for="project_img">Project Images:</label>
                     <div id="dropZ">
@@ -90,7 +94,7 @@ body {
                         <p>File size limit : 10 MB</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
 

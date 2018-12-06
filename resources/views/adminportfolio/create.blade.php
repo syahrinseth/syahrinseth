@@ -61,6 +61,10 @@ body {
             <label for="title">Body:</label>
             <textarea name="project_desc" id="summernote" class="form-control"></textarea>
         </div>
+        <div class="form-group">
+            <label for="project_type">Project Type</label>
+            <input type="text" class="form-control" name="project_type" placeholder="eg: Websites">
+        </div>
         <div class="">
             <label for="cover_image">Cover Image:</label>
 
@@ -72,7 +76,7 @@ body {
                 <p>File size limit : 10 MB</p>
             </div>
         </div>
-        <div class="">
+        <!-- <div class="">
             <label for="project_img">Project Images:</label>
             <div id="dropZ">
                 <div class="selectFile">
@@ -81,7 +85,7 @@ body {
                 </div>
                 <p>File size limit : 10 MB</p>
             </div>
-        </div>
+        </div> -->
 
         <div class="from-group">
             <label for="client">Client Name</label>

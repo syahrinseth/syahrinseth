@@ -19,6 +19,7 @@ class MasterPortfolio extends Migration
             $table->string('project_name');
             $table->text('project_desc')->nullable();
             $table->text('cover_image')->nullable();
+            $table->string('project_type')->nullable();
             $table->integer('user_id')->unsigned();
             $table->string('client')->nullable();
             $table->timestamps();

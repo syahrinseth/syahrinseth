@@ -35,24 +35,25 @@
                 <!-- <li><a href="{{route('/')}}#graphicdesign">Graphic Design</a></li> -->
                 </ul>
             </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Portfolio <b class="caret"></b></a>
-                <ul class="dropdown-menu">
+            <li>
+                <a href="{{route('index.portfolio')}}" class="">Portfolio</a>
+                <!-- <ul class="dropdown-menu">
                 <li><a href="#">Web Development</a></li>
                 <li><a href="#">Photo Gallery</a></li>
-                <!-- <li><a href="#">Something else here</a></li>
+                <li><a href="#">Something else here</a></li>
                 <li class="divider"></li>
                 <li><a href="#">Separated link</a></li>
                 <li class="divider"></li>
-                <li><a href="#">One more separated link</a></li> -->
-                </ul>
+                <li><a href="#">One more separated link</a></li>
+                </ul> -->
             </li>
-            <li>
+            <!-- <li>
                 <a href="#" class="">Blog</a>
-            </li>
+            </li> -->
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Contact <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">About <b class="caret"></b></a>
                 <ul class="dropdown-menu">
+                <li><a href="{{route('/')}}#aboutme">About Me</a></li>
                 <li><a href="{{route('/')}}#contact">Contact Me</a></li>
                 <li class="divider"></li>
                 <li><a href="https://www.instagram.com/syahrinseth" target="_blank" class="">Instagram <i class="fab fa-instagram"></i></a></li>

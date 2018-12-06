@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contact;
-
+use App\MasterPortfolio;
 class syahrinsethController extends Controller
 {
     /**
@@ -15,7 +15,8 @@ class syahrinsethController extends Controller
     public function home()
     {
         // Home page
-        return view('welcome');
+        $portfoliosRand = MasterPortfolio::inRandomOrder()->take(3)->get();
+        return view('welcome', compact('portfoliosRand'));
     }
 
     /**
@@ -65,8 +66,6 @@ class syahrinsethController extends Controller
         $contact = new Contact;
         $contact->name = $request->name;
         $contact->email = $request->email;
-        $contact->phone = $request->phone;
-        $contact->company = $request->company;
         $contact->message = $request->message;
         $contact->save();
         $request->session()->flash('alert-success', 'Send success');

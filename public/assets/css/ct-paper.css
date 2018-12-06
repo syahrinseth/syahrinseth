@@ -680,6 +680,12 @@ input.ct-red + span + label + span.switch-right {
   border: 0;
   padding: 7px 18px;
 }
+
+.btn-light {
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+}
+
 .btn-simple.btn-icon {
   padding: 7px;
 }
@@ -1438,12 +1444,23 @@ textarea.form-control {
   background-image: linear-gradient(to bottom, transparent 0%, rgba(112, 112, 112, 0) 60%, rgba(186, 186, 186, 0.15) 100%);
 }
 
+.section-nogradient {
+    padding: 30px 0;
+    position: relative;
+    background-color: #f4f3ef;
+}
+
 .section-with-space {
   padding: 60px 0;
 }
 
 .section-gray {
   background-color: #EEEEEE;
+}
+
+.section-primary {
+    background-color: #183247 !important;
+    color: #EEEEEE !important;
 }
 
 .section-white {
@@ -3359,4 +3376,9 @@ textarea.form-control {
 
 .text-inline{
     display: inline;
+}
+
+a.client-logo {
+    padding: 50px;
+    margin: auto;
 }
