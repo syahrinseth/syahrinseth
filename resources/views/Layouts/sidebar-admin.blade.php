@@ -47,12 +47,14 @@
               <p>Visitors</p>
             </a>
           </li> -->
+          @if(Auth::user()->user_type == "admin")
           <li id="messages">
             <a href="{{route('index.adminmessage')}}">
               <i class="nc-icon nc-chat-33"></i>
               <p>Messages</p>
             </a>
           </li>
+          @endif
           <!-- <li id="my-profile">
             <a href="./tables.html">
               <i class="nc-icon nc-badge"></i>

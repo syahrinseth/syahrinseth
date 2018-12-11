@@ -3,7 +3,7 @@
 @section('content')
 <div class="wrapper">
     <div class="main">
-        <div class="section" style="min-height:500px;">
+        <div class="section" style="min-height:700px;">
             <h2 class="text-center">Portfolio</h2>
 
 

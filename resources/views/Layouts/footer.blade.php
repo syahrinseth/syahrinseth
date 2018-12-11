@@ -19,11 +19,11 @@
                     </li> -->
                     <li>
                     @if(Auth::user())
-                        @if(Auth::user()->user_type == 'admin')
+
                         <a href="{{route('dashboard')}}">
                            Dashboard
                         </a>
-                        @endif
+
                     @else
                         <a href="{{route('login')}}">
                            Login

@@ -4,7 +4,7 @@
 @include('Layouts.message')
 @include('Layouts.validate')
 <div class="wrapper">
-        <div class="landing-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../assets/paper_img/coding-wallpaper2.jpg');">
+        <div class="landing-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url('../assets/paper_img/coding-wallpaper2.jpg');">
             <div class="container">
                 <div class="motto text-white text-center">
                     <h1 class="text-white text-inline">Hello! I'm </h1> <h1 class="title-uppercase text-inline">{ <code>Syahrin Seth</code> }.</h1>
