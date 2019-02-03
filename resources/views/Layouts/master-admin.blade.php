@@ -6,6 +6,8 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../admin-assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/paper_img/s-logo-blue.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Hello! I'm SYAHRIN SETH. I'm a web developer and a martial artist. I design and code Web/Mobile Applications to life.">
+    <meta name="keywords" content="web development, website, code, development, syahrinseth, syahrin seth, programmer, mobile development, mobile apps, web apps, martial arts, taekwon-do, travel">
   <title>
     Admin - @yield('title')
   </title>
@@ -33,13 +35,13 @@
 <body class="">
 
   <div class="wrapper ">
-    @include('layouts.sidebar-admin')
+    @include('Layouts.sidebar-admin')
     <div class="main-panel">
-      @include('layouts.nav-admin')
+      @include('Layouts.nav-admin')
 
       @yield('content')
 
-      @include('layouts.footer-admin')
+      @include('Layouts.footer-admin')
     </div>
     <!-- end main panel -->
   </div>

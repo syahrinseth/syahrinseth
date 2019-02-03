@@ -4,6 +4,9 @@
 	<meta charset="utf-8" />
 	<link rel="icon" type="image/png" href="../assets/paper_img/s-logo-blue.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="google-site-verification" content="w3q-0j_FB_tB2Sqj_UBZUlDHVq9tDFbs7pdrLsgl4d0" />
+	<meta name="description" content="Hello! I'm SYAHRIN SETH. I'm a web developer and a martial artist. I design and code Web/Mobile Applications to life.">
+	<meta name="keywords" content="web development, website, code, development, syahrinseth, syahrin seth, programmer, mobile development, mobile apps, web apps, martial arts, taekwon-do, travel">
 
 	<title>Syahrin Seth - @yield('title')</title>
 

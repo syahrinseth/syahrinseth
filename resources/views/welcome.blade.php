@@ -4,15 +4,14 @@
 @include('Layouts.message')
 @include('Layouts.validate')
 <div class="wrapper">
-        <div class="landing-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url('../assets/paper_img/coding-wallpaper2.jpg');">
+        <div class="landing-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url('../assets/paper_img/coding-wallpaper2.jpg');">
             <div class="container">
                 <div class="motto text-white text-center">
-                    <h1 class="text-white text-inline">Hello! I'm </h1> <h1 class="title-uppercase text-inline">{ <code>Syahrin Seth</code> }.</h1>
+                    <h2 class="text-white text-inline">Hi! My name is </h1> <h1 class="title-uppercase text-inline">{ <code>Syahrin Seth</code> }.</h2>
                     <br>
                     <br>
-                    <h2 class="text-white text-inline">
-                    I'm a</h2><h2 class="text-white text-inline"> Web Developer.</h2>
-                    <h4 class="text-white">I design and code websites to life.</h4>
+                    <h2 class="text-white text-inline">I'm a Web Developer &<br> a Martial Artist.</h2>
+                    <h4 class="text-white">I design and code Web/Mobile Applications to life.</h4>
                     <br />
                     <!-- <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-primary"><i class="fa fa-play"></i>Watch video</a> -->
                     <!-- <a class="btn btn-danger">Web Application Development</a>
@@ -33,14 +32,14 @@
                     <div class="row">
                         <div class="col-md-6" id="webdev">
                             <div><i class="fas fa-laptop-code fa-7x"></i></div>
-                            <h2>Web Application Development</h2>
+                            <h2>Custom Web Development</h2>
                             <h5>I design and develop responsive websites and web applications that looks great on your desktop computer, tablet and mobile devices.</h5>
                             <br />
                             <a href="{{route('/')}}#contact" class="btn">Contact Me</a>
                         </div>
                         <div class="col-md-6" id="wordpress">
                             <div><i class="fab fa-wordpress fa-7x"></i></div>
-                                <h2>Wordpress CMS</h2>
+                                <h2>Wordpress Development</h2>
                                 <h5>Wordpress is web software that allows you to manage your own content, log into your website to blog, and upload media and update your own website. The websites I create incorporate Wordpress so you can change your site anytime you want, at no cost.</h5>
                                 <br />
                                 <a href="{{route('/')}}#contact" class="btn">Contact Me</a>
@@ -127,11 +126,14 @@
                     <div class="col-md-10 col-md-offset-1">
                         <div class="team-player">
                             <img src="../assets/paper_img/syahrinseth2.jpg" alt="Thumbnail Image" class="img-circle img-responsive">
-                            <h5>Syahrin Seth <br /><small class="">Web Developer & Martial Artist</small></h5>
+                            <h5>Syahrin Seth <br /><small class="">Web Developer, Martial Artist</small></h5>
                             <!-- <h6>I'm Syah, a Web Application Developer and Photographer based in Shah Alam, MY.</h6> -->
-                            <p class="text-center">Hello, my name is Syahrin Seth, and I'm a Web Developer. I graduated from Management and Science University and acquired a Bachelor in Bioinformatics (Hons). Later, I work at PheonTech Sdn. Bhd. as a web developer. My recent projects involve in developing a websites and web applications for General Electric (GE POWER) to improve their business by using technology such as PHP (Laravel Framework), HTML/CSS (Bootstrap), Javascript (jQuery, React Native), SQL (MySQL, SQL Server), C# and VB.NET Core.
-                            <br><br>I have a year of experience in Web Development and very skilled in HTML/CSS (Bootstrap), Javascript (jQuery/ReactNative), PHP (Laravel 5), C#/VB (ASP.NET) and  SQL (MySQL, SQL Server, SQLite).
-                            I have a respect for working hour and deadline.</p>
+                            <p class="text-center">I'm Syahrin Seth, web developer, martial artist and travel photographer, working full-time in web development. If you have a project that needs some websites or web applications then that's where I come in. <br>
+                            My Job is to build your website or web application so that it is functional and user-friendly. Moreover, I add a personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way.
+                            <br><br>
+
+                            Hire me, I'm really good.
+                            </p>
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1">
                                     <h4>Tech Skills Highlights</h4>
@@ -251,14 +253,17 @@
                     </div>
                     <br><br>
                     <div class="row">
-                        <div class="col-md-4">
-                            <a href="https://www.ge.com/power" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-gepower.png" style="width:250px"></a>
+                        <div class="col-md-3">
+                            <a href="https://www.ge.com/power" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-gepower.png" style="width:250px;padding:20px;"></a>
                         </div>
-                        <div class="col-md-4">
-                            <a href="http://www.pheontech.com" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-pheontech.png" style="width:250px"></a>
+                        <div class="col-md-3">
+                            <a href="http://www.pheontech.com" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-pheontech.png" style="width:250px;padding:20px;"></a>
                         </div>
-                        <div class="col-md-4">
-                            <a href="http://www.noorarfa.com/" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-noorarfa.png" style="width:250px;margin-top:10px;"></a>
+                        <div class="col-md-3">
+                            <a href="http://www.noorarfa.com/" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-noorarfa.png" style="width:250px;padding:20px;"></a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="#" class="client-logo" target="_blank"><img src="/assets/img/clients/syahrinseth-ifctaekwondo.png" style="width:120px;padding:20px;"></a>
                         </div>
                     </div>
                 </div>

@@ -54,6 +54,13 @@
               <p>Messages</p>
             </a>
           </li>
+
+          <li id="tracker">
+            <a href="/stats" target="_blank">
+              <i class="nc-icon nc-chart-bar-32"></i>
+              <p>Tracker</p>
+            </a>
+          </li>
           @endif
           <!-- <li id="my-profile">
             <a href="./tables.html">

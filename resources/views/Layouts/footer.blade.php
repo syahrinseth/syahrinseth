@@ -38,7 +38,9 @@
                 </ul>
             </nav>
             <div class="copyright pull-right">
-                &copy; 2018, made with <i class="fa fa-heart heart"></i> by Syahrin Seth v1.0.0
+                &copy; <script>
+                  document.write(new Date().getFullYear())
+                </script>, made with <i class="fa fa-heart heart"></i> by Syahrin Seth v1.0.1
             </div>
         </div>
     </footer>

@@ -30,8 +30,8 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Services <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                <li><a href="{{route('/')}}#webdev">Web Development</a></li>
-                <li><a href="{{route('/')}}#wordpress">Wordpress CMS</a></li>
+                <li><a href="{{route('/')}}#webdev">Custom Web Development</a></li>
+                <li><a href="{{route('/')}}#wordpress">Wordpress Development</a></li>
                 <!-- <li><a href="{{route('/')}}#graphicdesign">Graphic Design</a></li> -->
                 </ul>
             </li>

@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'admin'
     ];
 
     /**
@@ -27,4 +27,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getIsAdminAttribute()
+    {
+        return true;
+    }
 }
