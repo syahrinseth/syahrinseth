@@ -16,10 +16,10 @@
             </nav>
             <div class="credits ml-auto">
               <span class="copyright">
-                ©
+                © 2018 -
                 <script>
                   document.write(new Date().getFullYear())
-                </script>, made with <i class="fa fa-heart heart"></i> by Syahrin Seth v1.0.1
+                </script>, made with <i class="fa fa-heart heart"></i> by Syahrin Seth v1.0.2
               </span>
             </div>
           </div>

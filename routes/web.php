@@ -17,7 +17,9 @@ Route::get('/', 'syahrinsethController@home')->name('/');
 Route::post('/contact/send', 'syahrinsethController@contactSend')->name('contactSend');
 
 // Blog
-Route::get('/blog/{slug}', 'syahrinsethAdminBlogController@show')->name('show.blog');
+Route::get('/blog/{slug}', 'syahrinsethBlogController@show')->name('show.blog');
+Route::get('/blog', 'syahrinsethBlogController@index')->name('index.blog');
+Route::post('/blog/create-blog-comment/{id}', 'syahrinsethBlogController@createBlogComment')->name('create_blog_comment.blog');
 
 // Portfolio
 Route::get('/portfolio', 'syahrinsethPortfolioController@index')->name('index.portfolio');

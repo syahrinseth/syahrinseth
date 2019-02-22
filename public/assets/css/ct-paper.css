@@ -3382,3 +3382,7 @@ a.client-logo {
     padding: 50px;
     margin: auto;
 }
+
+li > a.active {
+    opacity: 1 !important;
+}

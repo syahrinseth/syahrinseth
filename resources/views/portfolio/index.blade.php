@@ -92,6 +92,7 @@
 @section('custom-javascript')
 <script>
     $(document).ready(function(){
+        $('a[id="portfolio-nav"]').attr('class', 'active');
         $('button#All-portfoliotab').addClass("active");
 
         @if(count($portfolio_tabs) > 0)

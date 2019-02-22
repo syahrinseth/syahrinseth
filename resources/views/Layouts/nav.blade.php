@@ -25,18 +25,10 @@
         <div class="collapse navbar-collapse" id="navigation-example-2">
           <ul class="nav navbar-nav navbar-right">
             <li>
-                <a href="{{route('/')}}" class="">Home</a>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Services <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                <li><a href="{{route('/')}}#webdev">Custom Web Development</a></li>
-                <li><a href="{{route('/')}}#wordpress">Wordpress Development</a></li>
-                <!-- <li><a href="{{route('/')}}#graphicdesign">Graphic Design</a></li> -->
-                </ul>
+                <a href="{{route('/')}}" class="" id="home-nav">Home</a>
             </li>
             <li>
-                <a href="{{route('index.portfolio')}}" class="">Portfolio</a>
+                <a href="{{route('index.portfolio')}}" class="" id="portfolio-nav">Portfolio</a>
                 <!-- <ul class="dropdown-menu">
                 <li><a href="#">Web Development</a></li>
                 <li><a href="#">Photo Gallery</a></li>
@@ -47,9 +39,12 @@
                 <li><a href="#">One more separated link</a></li>
                 </ul> -->
             </li>
-            <!-- <li>
-                <a href="#" class="">Blog</a>
-            </li> -->
+            <li>
+                <a href="{{route('index.blog')}}" class="" id="blog-nav">Blog</a>
+            </li>
+            <li>
+                <a href="{{route('/')}}#services" class="" id="services-nav">Services</a>
+            </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">About <b class="caret"></b></a>
                 <ul class="dropdown-menu">

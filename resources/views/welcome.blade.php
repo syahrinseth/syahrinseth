@@ -7,11 +7,13 @@
         <div class="landing-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url('../assets/paper_img/coding-wallpaper2.jpg');">
             <div class="container">
                 <div class="motto text-white text-center">
-                    <h2 class="text-white text-inline">Hi! My name is </h1> <h1 class="title-uppercase text-inline">{ <code>Syahrin Seth</code> }.</h2>
+                    <h2 class="text-white text-inline">Hi! My name is </h2> <h1 class="title-uppercase text-inline">{ <code>Syahrin Seth</code> }.</h1>
                     <br>
                     <br>
-                    <h2 class="text-white text-inline">I'm a Web Developer &<br> a Martial Artist.</h2>
-                    <h4 class="text-white">I design and code Web/Mobile Applications to life.</h4>
+                    <h2 class="text-white text-inline">a full-stack Web Developer,<br></h2>
+                    <h2 class="text-white text-inline">a Martial Artist,<br></h2>
+                    <h2 class="text-white text-inline">a Wanderer.</h2>
+                    <h3 class="text-white text-right"><code>I design and code Websites to life.</code></h3>
                     <br />
                     <!-- <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-primary"><i class="fa fa-play"></i>Watch video</a> -->
                     <!-- <a class="btn btn-danger">Web Application Development</a>
@@ -126,9 +128,9 @@
                     <div class="col-md-10 col-md-offset-1">
                         <div class="team-player">
                             <img src="../assets/paper_img/syahrinseth2.jpg" alt="Thumbnail Image" class="img-circle img-responsive">
-                            <h5>Syahrin Seth <br /><small class="">Web Developer, Martial Artist</small></h5>
+                            <h5>Syahrin Seth <br /><small class="">Full-Stack Web Developer, Martial Artist</small></h5>
                             <!-- <h6>I'm Syah, a Web Application Developer and Photographer based in Shah Alam, MY.</h6> -->
-                            <p class="text-center">I'm Syahrin Seth, web developer, martial artist and travel photographer, working full-time in web development. If you have a project that needs some websites or web applications then that's where I come in. <br>
+                            <p class="text-center">I'm Syahrin Seth, full-stack web developer, martial artist and wanderer, working full-time in web development. If you have a project that needs some websites or web applications then that's where I come in. <br>
                             My Job is to build your website or web application so that it is functional and user-friendly. Moreover, I add a personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way.
                             <br><br>
 
@@ -254,13 +256,13 @@
                     <br><br>
                     <div class="row">
                         <div class="col-md-3">
-                            <a href="https://www.ge.com/power" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-gepower.png" style="width:250px;padding:20px;"></a>
+                            <a href="https://www.ge.com/power" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-gepower.png" style="width:250px;padding:40px;"></a>
                         </div>
                         <div class="col-md-3">
-                            <a href="http://www.pheontech.com" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-pheontech.png" style="width:250px;padding:20px;"></a>
+                            <a href="http://www.pheontech.com" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-pheontech.png" style="width:250px;padding:40px;"></a>
                         </div>
                         <div class="col-md-3">
-                            <a href="http://www.noorarfa.com/" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-noorarfa.png" style="width:250px;padding:20px;"></a>
+                            <a href="http://www.noorarfa.com/" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-noorarfa.png" style="width:250px;padding:40px;"></a>
                         </div>
                         <div class="col-md-3">
                             <a href="#" class="client-logo" target="_blank"><img src="/assets/img/clients/syahrinseth-ifctaekwondo.png" style="width:120px;padding:20px;"></a>
@@ -333,5 +335,9 @@
 
 @endsection
 @section('custom-javascript')
-
+    <script>
+        $(document).ready(function(){
+            $('a[id="home-nav"]').attr('class', 'active');
+        });
+    </script>
 @endsection

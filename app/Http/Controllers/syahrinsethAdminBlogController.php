@@ -123,19 +123,7 @@ class syahrinsethAdminBlogController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($slug)
-    {
-        $MasterBlog = MasterBlog::where("slug", $slug)->firstOrFail();
-        $postsRand = MasterBlog::inRandomOrder()->take(3)->get();
-        MasterBlog::addPageView($slug, true);
-        return view('blog.show', compact('MasterBlog', 'postsRand'));
-    }
+
 
     /**
      * Show the form for editing the specified resource.

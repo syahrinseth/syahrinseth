@@ -23,6 +23,7 @@ class MasterBlog extends Migration
             $table->text('body')->nullable();
             $table->string('cover_img')->nullable();
             $table->string('author')->nullable();
+            $table->double('total_views')->default(0);
             $table->timestamps();
         });
         if (Schema::hasTable('users')) {
