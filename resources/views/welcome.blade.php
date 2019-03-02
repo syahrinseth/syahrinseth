@@ -10,10 +10,9 @@
                     <h2 class="text-white text-inline">Hi! My name is </h2> <h1 class="title-uppercase text-inline">{ <code>Syahrin Seth</code> }.</h1>
                     <br>
                     <br>
-                    <h2 class="text-white text-inline">a full-stack Web Developer,<br></h2>
-                    <h2 class="text-white text-inline">a Martial Artist,<br></h2>
-                    <h2 class="text-white text-inline">a Wanderer.</h2>
-                    <h3 class="text-white text-right"><code>I design and code Websites to life.</code></h3>
+                    <h2 class="text-white text-inline">I'm a Software Engineer,<br></h2>
+                    <h2 class="text-white text-inline">who teach Martial Arts.<br></h2>
+                    <h3 class="text-white text-right"><code>I design and code Web & Mobile Applications to life.</code></h3>
                     <br />
                     <!-- <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-primary"><i class="fa fa-play"></i>Watch video</a> -->
                     <!-- <a class="btn btn-danger">Web Application Development</a>
@@ -32,20 +31,20 @@
                     </div>
                     <br>
                     <div class="row">
-                        <div class="col-md-6" id="webdev">
+                        <div class="col-md" id="webdev">
                             <div><i class="fas fa-laptop-code fa-7x"></i></div>
-                            <h2>Custom Web Development</h2>
-                            <h5>I design and develop responsive websites and web applications that looks great on your desktop computer, tablet and mobile devices.</h5>
+                            <h2>Web Applications Development</h2>
+                            <h5>I design and develop responsive custom websites or web applications that looks great on your desktop computer, tablet and mobile devices. I also use wordpress to develop simple landing page with CMS and e-commerce website to the clients. Wordpress is web software that allows you to manage your own content, log into your website to blog, and upload media and update your own website. The websites I create incorporate Wordpress so you can change your site anytime you want, at no cost.</h5>
                             <br />
                             <a href="{{route('/')}}#contact" class="btn">Contact Me</a>
                         </div>
-                        <div class="col-md-6" id="wordpress">
+                        <!-- <div class="col-md-6" id="wordpress">
                             <div><i class="fab fa-wordpress fa-7x"></i></div>
-                                <h2>Wordpress Development</h2>
+                                <h2></h2>
                                 <h5>Wordpress is web software that allows you to manage your own content, log into your website to blog, and upload media and update your own website. The websites I create incorporate Wordpress so you can change your site anytime you want, at no cost.</h5>
                                 <br />
                                 <a href="{{route('/')}}#contact" class="btn">Contact Me</a>
-                        </div>
+                        </div> -->
                         <!-- <div class="col-md-4" id="graphicdesign">
                             <div><i class="fas fa-pencil-alt fa-7x"></i></div>
                                 <h2>Graphic Design</h2>
@@ -128,12 +127,11 @@
                     <div class="col-md-10 col-md-offset-1">
                         <div class="team-player">
                             <img src="../assets/paper_img/syahrinseth2.jpg" alt="Thumbnail Image" class="img-circle img-responsive">
-                            <h5>Syahrin Seth <br /><small class="">Full-Stack Web Developer, Martial Artist</small></h5>
+                            <h5>Syahrin Seth <br /><small class="">Software Engineer & Martial Artist</small></h5>
                             <!-- <h6>I'm Syah, a Web Application Developer and Photographer based in Shah Alam, MY.</h6> -->
-                            <p class="text-center">I'm Syahrin Seth, full-stack web developer, martial artist and wanderer, working full-time in web development. If you have a project that needs some websites or web applications then that's where I come in. <br>
+                            <p class="text-center">I'm Syahrin Seth, software engineer and martial artist, working full-time in web and mobile application development and part-time as a martial arts instructor. If you have a project that needs some websites or web applications then that's where I come in. <br>
                             My Job is to build your website or web application so that it is functional and user-friendly. Moreover, I add a personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way.
                             <br><br>
-
                             Hire me, I'm really good.
                             </p>
                             <div class="row">
@@ -189,19 +187,15 @@
                                                     <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> </td>
                                                 </tr>
                                                 <tr class="text-left">
-                                                    <td> ASP.NET Core MVC  </td>
+                                                    <td> ASP.NET Core </td>
                                                     <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </td>
                                                 </tr>
                                                 <tr class="text-left">
-                                                    <td> React Native  </td>
-                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </td>
+                                                    <td> Ionic Framework  </td>
+                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </td>
                                                 </tr>
                                                 <tr class="text-left">
                                                     <td> MySQL  </td>
-                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></i><i class="far fa-star"></i> </td>
-                                                </tr>
-                                                <tr class="text-left">
-                                                    <td> SQLite  </td>
                                                     <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></i><i class="far fa-star"></i> </td>
                                                 </tr>
                                                 <tr class="text-left">
