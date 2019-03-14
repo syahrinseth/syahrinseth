@@ -5,9 +5,6 @@
     <div class="main">
         <div class="section" style="min-height:700px;">
             <h2 class="text-center">Portfolio</h2>
-
-
-
             @if(count($portfolios) > 0)
             <div class="container">
                 <div class="row text-center">
