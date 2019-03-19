@@ -51,9 +51,9 @@
                 <li><a href="{{route('/')}}#aboutme">About Me</a></li>
                 <li><a href="{{route('/')}}#contact">Contact Me</a></li>
                 <li class="divider"></li>
+                <li><a href="https://www.github.com/syahrinseth" target="_blank" class="">GitHub <i class="fab fa-github"></i></a></li>
                 <li><a href="https://www.instagram.com/syahrinseth" target="_blank" class="">Instagram <i class="fab fa-instagram"></i></a></li>
                 <li><a href="https://www.linkedin.com/in/syahrinseth/" target="_blank" class="">Linkedin <i class="fab fa-linkedin"></i></a></li>
-                <li><a href="https://www.github.com/syahrinseth" target="_blank" class="">GitHub <i class="fab fa-github"></i></a></li>
                 <!-- <li><a href="#">Something else here</a></li>
                 <li class="divider"></li>
                 <li><a href="#">Separated link</a></li>

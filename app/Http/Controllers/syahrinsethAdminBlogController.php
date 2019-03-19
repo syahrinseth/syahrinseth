@@ -28,10 +28,12 @@ class syahrinsethAdminBlogController extends Controller
     public function index()
     {
         if(Auth::user()->user_type == 'admin'){
-            $MasterBlogs = MasterBlog::paginate(3);
+            $MasterBlogs = BlogCategories::leftJoin('master_blogs', 'master_blogs.id', '=', 'blog_categories.masterblogs_id')->orderBy('master_blogs.updated_at', "desc")->paginate(6);
+            // $MasterBlogs = MasterBlog::leftJoin('blog_categories', 'blog_categories.masterblogs_id', '=', 'master_blogs.id')->paginate(3);
             return view('adminblog.index', compact('MasterBlogs'));
         }else{
-            $MasterBlogs = MasterBlog::where('user_id', '=', Auth::user()->id)->paginate(3);
+            // $MasterBlogs = MasterBlog::where('user_id', '=', Auth::user()->id)->paginate(3);
+            $MasterBlogs = BlogCategories::leftJoin('master_blogs', 'master_blogs.id', '=', 'blog_categories.masterblogs_id')->where('user_id', '=', Auth::user()->id)->orderBy('master_blogs.updated_at', "desc")->paginate(6);
             return view('adminblog.index', compact('MasterBlogs'));
         }
 
@@ -45,7 +47,8 @@ class syahrinsethAdminBlogController extends Controller
     public function create()
     {
         $MasterCategories = masterCategoriesModel::all();
-        return view('adminblog.create', compact('MasterCategories'));
+        $categories = masterCategoriesModel::all();
+        return view('adminblog.create', compact('MasterCategories', 'categories'));
     }
 
     /**
@@ -59,6 +62,7 @@ class syahrinsethAdminBlogController extends Controller
         if(Auth::user()->user_type != 'visitor'){
             $this->validate(request(), [
                 'title' => 'required|unique:master_blogs,title',
+                'cover_img' => 'mimes:jpeg,bmp,png'
             ]);
 
             $master_blog = new MasterBlog;
@@ -67,6 +71,7 @@ class syahrinsethAdminBlogController extends Controller
             $master_blog->body = $request->body;
             $master_blog->author = Auth::user()->name;
             $master_blog->user_id = Auth::user()->id;
+            $master_blog->publish = $request->publish;
             $master_blog->save();
             $masterblog_with_id = MasterBlog::where('slug', $master_blog->slug)->firstOrFail();
 
@@ -80,42 +85,57 @@ class syahrinsethAdminBlogController extends Controller
                 // Filename to store
                 $fileNameToStore = time().'-syahrinseth'.'.'.$extension;
                 // Upload image
-                $path = $request->file('cover_img')->storeAs('/public/blog/'.$masterblog_with_id->id.'/', $fileNameToStore);
-                $masterblog_with_id->cover_img = $fileNameToStore;
+                $request->file('cover_img')->storeAs('/public/blog/'.$masterblog_with_id->id.'/', $fileNameToStore);
+                $masterblog_with_id->cover_img = '/public/blog/'.$masterblog_with_id->id.'/'. $fileNameToStore;
                 $masterblog_with_id->update();
             }
 
             // Check if category exists
-            if($request->category){
-                $master_categories = masterCategoriesModel::where('category', strtolower($request->category))->first();
-                if($master_categories){
-                    $categories = BlogCategories::where('masterblogs_id', $masterblog_with_id->id)->first();
-                    if($categories){
-                        $categories->mastercategories_id = $master_categories->id;
-                        $categories->update();
-                    }else{
-                        $categories = new BlogCategories;
-                        $categories->mastercategories_id = $master_categories->id;
-                        $categories->masterblogs_id = $master_blog->id;
-                        $categories->save();
-                    }
-                }else{
-                    $categories = new masterCategoriesModel;
-                    $categories->category = strtolower($request->category);
-                    $categories->save();
-                    $categories = masterCategoriesModel::where('category', $request->category)->first();
-                    if($categories){
-                        $categories = new BlogCategories;
-                        $categories->mastercategories_id = $categories->id;
-                        $categories->masterblogs_id = $master_blog->id;
-                        $categories->save();
-                    }else{
-                        $request->session()->flash('alert-success', 'Add Category Failed!');
-                        return baack();
-                    }
+            // Search master category
+            $master_categories = masterCategoriesModel::where('category', strtolower($request->category))->first();
 
+            if($master_categories != null){
+                // If category in master category exists
+                if($request->category != "select" || $request->category != ""){
+                    $blog_categories = new BlogCategories;
+                    $blog_categories->mastercategories_id = $master_categories->id;
+                    $blog_categories->masterblogs_id = $masterblog_with_id->id;
+                    $blog_categories->save();
                 }
+            }else{
+                // no catagory available inside master category
             }
+
+            // if($request->category){
+            //     $master_categories = masterCategoriesModel::where('category', strtolower($request->category))->first();
+            //     if($master_categories){
+            //         $categories = BlogCategories::where('masterblogs_id', $masterblog_with_id->id)->first();
+            //         if($categories){
+            //             $categories->mastercategories_id = $master_categories->id;
+            //             $categories->update();
+            //         }else{
+            //             $categories = new BlogCategories;
+            //             $categories->mastercategories_id = $master_categories->id;
+            //             $categories->masterblogs_id = $master_blog->id;
+            //             $categories->save();
+            //         }
+            //     }else{
+            //         $categories = new masterCategoriesModel;
+            //         $categories->category = strtolower($request->category);
+            //         $categories->save();
+            //         $categories = masterCategoriesModel::where('category', $request->category)->first();
+            //         if($categories){
+            //             $categories = new BlogCategories;
+            //             $categories->mastercategories_id = $categories->id;
+            //             $categories->masterblogs_id = $master_blog->id;
+            //             $categories->save();
+            //         }else{
+            //             $request->session()->flash('alert-success', 'Add Category Failed!');
+            //             return baack();
+            //         }
+
+            //     }
+            // }
             $request->session()->flash('alert-success', 'Success!');
             return redirect()->route('index.adminblog');
         }else{
@@ -134,9 +154,9 @@ class syahrinsethAdminBlogController extends Controller
     public function edit($id)
     {
         $MasterBlog = MasterBlog::findOrFail($id);
-        $category = masterCategoriesModel::leftJoin('blog_categories', 'master_categories.id', '=', 'blog_categories.mastercategories_id')->where('blog_categories.masterblogs_id', $id)->first();
-        $MasterCategories = masterCategoriesModel::all();
-        return view('adminblog.edit', compact('MasterBlog', 'category', 'MasterCategories'));
+        $blog_category = masterCategoriesModel::leftJoin('blog_categories', 'master_categories.id', '=', 'blog_categories.mastercategories_id')->where('blog_categories.masterblogs_id', $id)->first();
+        $categories = masterCategoriesModel::all();
+        return view('adminblog.edit', compact('MasterBlog', 'blog_category', 'categories'));
     }
 
     /**
@@ -148,8 +168,13 @@ class syahrinsethAdminBlogController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate(request(), [
+            'title' => 'required',
+            'cover_img' => 'mimes:jpeg,bmp,png'
+        ]);
         if(Auth::user()->user_type != 'visitor'){
             $master_blog = MasterBlog::findOrFail($id);
+            $master_blog_id = $master_blog->id;
             if($master_blog->slug == strtolower(str_replace(" ", "-", $request->title))){
                 $master_blog->title = $request->title;
                 $master_blog->slug = strtolower(str_replace(" ", "-", $request->title));
@@ -161,10 +186,12 @@ class syahrinsethAdminBlogController extends Controller
                 $master_blog->slug = strtolower(str_replace(" ", "-", $request->title));
             }
             $master_blog->body = $request->body;
+            $master_blog->publish = $request->publish;
             $master_blog->author = Auth::user()->name;
             $master_blog->user_id = Auth::user()->id;
             if($request->cover_img){
-                Storage::disk('public')->delete('/blog'.'/'.$master_blog->id.'/'.$master_blog->cover_img);
+                Storage::disk('local')->delete($master_blog->cover_img);
+
                 // Get filename with the extension
                 $filenameWithExt = $request->file('cover_img')->getClientOriginalName();
                 // Get just filename
@@ -174,43 +201,38 @@ class syahrinsethAdminBlogController extends Controller
                 // Filename to store
                 $fileNameToStore = time().'-syahrinseth'.'.'.$extension;
                 // Upload image
-                $path = $request->file('cover_img')->storeAs('/public/blog/'.$master_blog->id.'/', $fileNameToStore);
+                $request->file('cover_img')->storeAs('/public/blog/'.$master_blog->id.'/', $fileNameToStore);
+                $master_blog->cover_img = '/public/blog/'.$master_blog->id.'/'. $fileNameToStore;
 
-                $master_blog->cover_img = $fileNameToStore;
             }
             $master_blog->update();
             // Check if category exists
 
 
-            // Check if category exists
-            if($request->category){
-                $master_categories = masterCategoriesModel::where('category', strtolower($request->category))->first();
-                if($master_categories){
-                    $categories = BlogCategories::where('masterblogs_id', $master_blog->id)->first();
-                    if($categories){
-                        $categories->mastercategories_id = $master_categories->id;
-                        $categories->update();
-                    }else{
-                        $categories = new BlogCategories;
-                        $categories->mastercategories_id = $master_categories->id;
-                        $categories->masterblogs_id = $master_blog->id;
-                        $categories->save();
-                    }
-                }else{
-                    $categories = new masterCategoriesModel;
-                    $categories->category = strtolower($request->category);
-                    $categories->save();
-                    $categories = masterCategoriesModel::where('category', $request->category)->first();
-                    if($categories){
-                        $categories = new BlogCategories;
-                        $categories->mastercategories_id = $categories->id;
-                        $categories->masterblogs_id = $master_blog->id;
-                        $categories->save();
-                    }else{
-                        $request->session()->flash('alert-success', 'Add Category Failed!');
-                        return baack();
-                    }
+            // Search master category
+            $master_categories = masterCategoriesModel::where('category', strtolower($request->category))->first();
 
+            // user current category
+            $categories = BlogCategories::where('masterblogs_id', $master_blog_id)->first();
+
+
+            if($master_categories != null){
+                // If category in master category exists
+                if($categories){
+                    $categories->mastercategories_id = $master_categories->id;
+                    $categories->update();
+                }elseif($request->category != "select" || $request->category != ""){
+                    $blog_categories = new BlogCategories;
+                    $blog_categories->mastercategories_id = $master_categories->id;
+                    $blog_categories->masterblogs_id = $master_blog_id;
+                    $blog_categories->save();
+                }else{
+                    $categories->delete();
+                }
+            }else{
+                // If category in master category not exists
+                if($categories != null){
+                    $categories->delete();
                 }
             }
             $request->session()->flash('alert-success', 'Success!');
@@ -233,7 +255,11 @@ class syahrinsethAdminBlogController extends Controller
 
     public function destroy(Request $request, $id)
     {
-        MasterBlog::findOrFail($id)->delete();
+        $blog = MasterBlog::findOrFail($id);
+        if($blog->cover_img != null){
+            Storage::disk('local')->deleteDirectory('/public/blog/'.$id);
+        }
+        $blog->delete();
         $blogCategories = BlogCategories::where('masterblogs_id', $id)->get();
         if(count($blogCategories) > 0){
             foreach($blogCategories as $category){

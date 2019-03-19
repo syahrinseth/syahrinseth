@@ -23,7 +23,7 @@ class syahrinsethBlogController extends Controller
     public function index()
     {
         // GET DATA FROM DATABASE
-        $MasterBlogs = MasterBlog::orderBy('created_at', 'desc')->paginate(5);
+        $MasterBlogs = MasterBlog::where('publish', 1)->orderBy('created_at', 'desc')->paginate(5);
         // SEND DATA TO VIEW
         return view('blog.index', compact('MasterBlogs'));
     }
@@ -36,9 +36,9 @@ class syahrinsethBlogController extends Controller
      */
     public function show($slug)
     {
-        $MasterBlog = MasterBlog::where("master_blogs.slug", $slug)->firstOrFail();
+        $MasterBlog = MasterBlog::where("master_blogs.slug", $slug)->where('publish', '=', 1)->firstOrFail();
         $blogComments = BlogComment::where('masterblogs_id', '=', $MasterBlog->id)->orderBy('created_at', 'DESC')->get();
-        $postsRand = MasterBlog::inRandomOrder()->take(3)->get();
+        $postsRand = MasterBlog::where('publish', '=', 1)->inRandomOrder()->take(3)->get();
         MasterBlog::addPageView($slug, true);
         return view('blog.show', compact('MasterBlog', 'postsRand', 'blogComments'));
     }

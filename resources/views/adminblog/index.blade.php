@@ -45,7 +45,10 @@
                           {{ucfirst($MasterBlog->title)}}
                         </td>
                         <td>
-                          {{$MasterBlog->title}}
+                            @php
+                                $master_category = App\masterCategoriesModel::find($MasterBlog->mastercategories_id);
+                            @endphp
+                            {{$master_category->category}}
                         </td>
                         <td>
                           {{$MasterBlog->author}}
@@ -70,7 +73,7 @@
                             <a class="nav-link btn btn-simple btn-sm nc-icon nc-settings-gear-65" href="http://example.com" id="navbarDropdownMenuLinkCustom" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLinkCustom">
-                                <a class="dropdown-item" href="{{route('show.adminblog', [ 'slug' => $MasterBlog->slug ])}}" target="_blank">View</a>
+                                <a class="dropdown-item" href="{{route('show.blog', [ 'slug' => $MasterBlog->slug ])}}" target="_blank">View</a>
                                 <a class="dropdown-item" href="{{route('edit.adminblog', [ 'id' => $MasterBlog->id ])}}">Edit</a>
                                 <a class="dropdown-item" href="{{route('delete.adminblog', ['id' => $MasterBlog->id])}}">Delete</a>
                             </div>

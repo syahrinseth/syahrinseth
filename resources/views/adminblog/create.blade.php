@@ -61,32 +61,56 @@ body {
             <label for="title">Body:</label>
             <textarea name="body" id="summernote" class="form-control"></textarea>
         </div>
-        <div class="">
-            <label for="cover_image">Cover Image:</label>
-
-            <div id="dropZ">
-                <div class="selectFile">
-                <label for="file">Select file</label>
-                <input type="file" name="cover_img" id="file">
-                </div>
-                <p>File size limit : 10 MB</p>
-            </div>
-        </div>
-
-
-        <h4 class="card-title">Category</h4>
         <div class="row">
-            <div class="col-12">
+            <div class="col-6">
+                <label for="cover_image">Cover Image:</label>
+                <br>
+                <div id="dropZ">
+                    <div class="selectFile">
+                    <label for="file">Select file</label>
+                    <input type="file" name="cover_img" id="file">
+                    </div>
+                    <p>File size limit : 10 MB</p>
+                </div>
+            </div>
+            <div class="col-6">
                 <label for="category">Category</label>
+                <div class="from-group">
+                    <select name="category" id="" class="form-control">
+                        <option value="">Select</option>
+                        @if(count($categories) > 0)
+                            @foreach($categories as $category)
+                                    <option value="{{$category->category}}">{{$category->category}}</option>
+                            @endforeach
+                        @endif
+                    </select>
+                </div>
+
+                <br>
                 <div class="row">
-                    <div class="col-6">
-                        <div class="from-group autocomplete">
-                                <input id="category" class="form-control" type="text" name="category" placeholder="Category" value="">
+                    <div class="col-12">
+                        <label for="category">Publish Status</label>
+                        <div class="form-check-radio">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="publish" id="publish" value="1">
+                                Publish On
+                                <span class="form-check-sign"></span>
+                            </label>
+                        </div>
+                        <div class="form-check-radio">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="publish" id="publish" value="0" checked="checked">
+                                Publish Off
+                                <span class="form-check-sign"></span>
+                            </label>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+
 
         <br>
         <button type="submit" class="btn btn-primary">Save</button>
