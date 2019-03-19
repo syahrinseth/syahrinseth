@@ -19,7 +19,7 @@
                         <hr>
                         <div class="panel">
                             <div class="panel-body">
-                                <img class="panel-img-top cover-img" src="/storage/blog/{{$MasterBlog->id}}/{{$MasterBlog->cover_img}}" alt="Card image cap" width="400px">
+                                <img class="panel-img-top cover-img" src="{{str_replace('public', 'storage', $MasterBlog->cover_img)}}" alt="Card image cap" width="400px">
                                 <p>{!!$MasterBlog->body!!}</p>
                             </div>
                             <div class="panel-footer">
@@ -75,7 +75,7 @@
                             <div class="col-md-4">
                             <a href="{{route('show.blog', ['slug'=>$post->slug])}}" title="{{ucfirst($post->title)}}">
                                 <div class="panel" style="width: 20rem;">
-                                    <img class="panel-img-top" src="/storage/blog/{{$post->id}}/{{$post->cover_img}}" alt="Card image cap" width="100%">
+                                    <img class="panel-img-top" src="{{str_replace('public', 'storage', $post->cover_img)}}" alt="Card image cap" width="100%">
                                     <div class="panel-body">
                                         <p class="panel-text">{{ucfirst($post->title)}}</p>
                                     </div>

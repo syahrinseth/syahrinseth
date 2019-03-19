@@ -20,7 +20,7 @@
                                 <hr>
                                 <div class="panel">
                                     <div class="panel-body">
-                                        <img class="panel-img-top cover-img" src="/storage/blog/{{$MasterBlog->id}}/{{$MasterBlog->cover_img}}" alt="Card image cap" width="400px">
+                                        <img class="panel-img-top cover-img" src="{{str_replace('public', 'storage', $MasterBlog->cover_img)}}" alt="Card image cap" width="400px">
                                         @php
                                             // strip tags to avoid breaking any html
                                             $body = strip_tags($MasterBlog->body);

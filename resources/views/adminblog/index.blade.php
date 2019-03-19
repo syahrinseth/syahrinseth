@@ -45,7 +45,10 @@
                           {{ucfirst($MasterBlog->title)}}
                         </td>
                         <td>
-                          {{$MasterBlog->title}}
+                            @php
+                                $master_category = App\masterCategoriesModel::find($MasterBlog->mastercategories_id);
+                            @endphp
+                            {{$master_category->category}}
                         </td>
                         <td>
                           {{$MasterBlog->author}}

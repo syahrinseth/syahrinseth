@@ -11,8 +11,7 @@
                     <br>
                     <br>
                     <h2 class="text-white text-inline">A Software Engineer,<br></h2>
-                    <h2 class="text-white text-inline">Martial Artists,<br></h2>
-                    <h2 class="text-white text-inline">Traveler.<br></h2>
+                    <h2 class="text-white text-inline">Martial Artists.<br></h2>
                     <!-- <h3 class="text-white text-right"><code>I design and code Web & Mobile Applications to life.</code></h3> -->
                     <br />
                     <!-- <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-primary"><i class="fa fa-play"></i>Watch video</a> -->
