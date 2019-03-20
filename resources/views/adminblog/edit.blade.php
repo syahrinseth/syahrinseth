@@ -87,6 +87,8 @@ body {
                         <a class="btn btn-danger" href="#dropZ" id="remove_img">Remove</a>
                     </div>
                 </div>
+
+            @endif
                 <div class="col-6">
                     <label for="category">Category</label>
                     <div class="from-group">
@@ -129,7 +131,6 @@ body {
                     </div>
                 </div>
 
-            @endif
         </div>
 
         <div class="row">
