@@ -20,14 +20,16 @@
                                 <hr>
                                 <div class="panel">
                                     <div class="panel-body">
-                                        <img class="panel-img-top cover-img" src="{{str_replace('public', 'storage', $MasterBlog->cover_img)}}" alt="Card image cap" width="400px">
+                                        @if($MasterBlog->cover_img != null)
+                                            <img class="panel-img-top cover-img" src="{{str_replace('public', 'storage', $MasterBlog->cover_img)}}" alt="Card image cap" width="400px">
+                                        @endif
                                         @php
                                             // strip tags to avoid breaking any html
                                             $body = strip_tags($MasterBlog->body);
-                                            if (strlen($body) > 500) {
+                                            if (strlen($body) > 1000) {
 
                                                 // truncate string
-                                                $stringCut = substr($body, 0, 500);
+                                                $stringCut = substr($body, 0, 1000);
                                                 $endPoint = strrpos($stringCut, ' ');
 
                                                 //if the string doesn't contain any space then it will cut without word basis.

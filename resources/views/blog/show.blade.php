@@ -19,8 +19,12 @@
                         <hr>
                         <div class="panel">
                             <div class="panel-body">
-                                <img class="panel-img-top cover-img" src="{{str_replace('public', 'storage', $MasterBlog->cover_img)}}" alt="Card image cap" width="400px">
-                                <p>{!!$MasterBlog->body!!}</p>
+                                @if($MasterBlog->cover_img != null)
+                                    <img class="panel-img-top cover-img" src="{{str_replace('public', 'storage', $MasterBlog->cover_img)}}" alt="Card image cap" width="400px">
+                                @endif
+                                @if($MasterBlog->body != null)
+                                    <p>{!!$MasterBlog->body!!}</p>
+                                @endif
                             </div>
                             <div class="panel-footer">
                                 <div class="row">
@@ -75,9 +79,30 @@
                             <div class="col-md-4">
                             <a href="{{route('show.blog', ['slug'=>$post->slug])}}" title="{{ucfirst($post->title)}}">
                                 <div class="panel" style="width: 20rem;">
-                                    <img class="panel-img-top" src="{{str_replace('public', 'storage', $post->cover_img)}}" alt="Card image cap" width="100%">
+                                    @if($post->cover_img != null)
+                                        <img class="panel-img-top" src="{{str_replace('public', 'storage', $post->cover_img)}}" alt="Card image cap" width="100%">
+                                    @endif
                                     <div class="panel-body">
                                         <p class="panel-text">{{ucfirst($post->title)}}</p>
+                                    </div>
+                                    <div class="panel-footer">
+                                        @php
+                                            // strip tags to avoid breaking any html
+                                            $body = strip_tags($post->body);
+                                            if (strlen($body) > 100) {
+
+                                                // truncate string
+                                                $stringCut = substr($body, 0, 100);
+                                                $endPoint = strrpos($stringCut, ' ');
+
+                                                //if the string doesn't contain any space then it will cut without word basis.
+                                                $body = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+                                                $route = route('show.blog', [ 'slug' => $post->slug ]);
+                                                $body .= '... <a href="'.$route.'">Read More</a>';
+                                            }
+                                        @endphp
+                                        {!!$body!!}
+                                        <p></p>
                                     </div>
                                 </div>
                             </a>
@@ -85,9 +110,9 @@
                             @endforeach
                         </div>
                     </div>
-                    <div class="col-md-2">
+                    <!-- <div class="col-md-2">
 
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
