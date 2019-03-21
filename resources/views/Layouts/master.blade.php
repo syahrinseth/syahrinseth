@@ -71,6 +71,17 @@
 <!-- Portfolio UI JS File -->
 <script src="/js/index.js"></script>
 
+
+<script>
+    var pre = document.querySelectorAll("pre");
+    for(i=0;pre.length > 0;i++){
+        pre[i].classList.add("prettyprint");
+    }
+</script>
+
+<!-- Code Syntex highlight -->
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
 @yield('custom-javascript')
 
 </html>

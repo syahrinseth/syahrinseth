@@ -28,7 +28,7 @@ class syahrinsethAdminBlogController extends Controller
     public function index()
     {
         if(Auth::user()->user_type == 'admin'){
-            $MasterBlogs = BlogCategories::leftJoin('master_blogs', 'master_blogs.id', '=', 'blog_categories.masterblogs_id')->orderBy('master_blogs.updated_at', "desc")->paginate(6);
+            $MasterBlogs = BlogCategories::rightJoin('master_blogs', 'master_blogs.id', '=', 'blog_categories.masterblogs_id')->orderBy('master_blogs.updated_at', "desc")->paginate(6);
             // $MasterBlogs = MasterBlog::leftJoin('blog_categories', 'blog_categories.masterblogs_id', '=', 'master_blogs.id')->paginate(3);
             return view('adminblog.index', compact('MasterBlogs'));
         }else{

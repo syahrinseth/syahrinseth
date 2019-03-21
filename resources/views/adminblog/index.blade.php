@@ -47,8 +47,11 @@
                         <td>
                             @php
                                 $master_category = App\masterCategoriesModel::find($MasterBlog->mastercategories_id);
+
+                                if($master_category != null){
+                                    echo $master_category->category;
+                                }
                             @endphp
-                            {{$master_category->category}}
                         </td>
                         <td>
                           {{$MasterBlog->author}}
