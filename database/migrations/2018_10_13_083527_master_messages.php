@@ -15,23 +15,12 @@ class MasterMessages extends Migration
     {
         Schema::create('master_messages', function(Blueprint $table){
             $table->increments('id');
-            $table->integer('from_userid')->unsigned()->nullable();
-            $table->integer('to_userid')->unsigned()->nullable();
+            $table->string('name');
+            $table->string('email');
             $table->text('message');
-            $table->string('message_image')->nullable();
             $table->timestamps();
         });
 
-        if(Schema::hasTable('users')){
-            Schema::table('master_messages', function(Blueprint $table){
-                $table->foreign('from_userid')
-                ->references('id')->on('users')
-                ->onDelete('cascade');
-                $table->foreign('to_userid')
-                ->references('id')->on('users')
-                ->onDelete('cascade');
-            });
-        }
     }
 
     /**
@@ -41,11 +30,6 @@ class MasterMessages extends Migration
      */
     public function down()
     {
-        if (Schema::hasTable('master_messages')){
-            Schema::table('master_messages', function(Blueprint $table){
-                $table->dropForeign(['from_userid', 'to_userid']);
-            });
-        }
         Schema::dropIfExists('master_messages');
     }
 }

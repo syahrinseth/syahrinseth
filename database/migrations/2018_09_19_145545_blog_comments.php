@@ -19,7 +19,6 @@ class BlogComments extends Migration
             $table->integer('masterblogs_id')->unsigned();
             $table->string('name')->nullable();
             $table->text('body');
-            $table->integer('rating')->default(0);
             $table->timestamps();
         });
         if (Schema::hasTable('master_blogs')) {

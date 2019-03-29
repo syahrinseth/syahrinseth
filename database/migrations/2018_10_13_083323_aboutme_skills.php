@@ -17,7 +17,7 @@ class AboutmeSkills extends Migration
             $table->increments('id');
             $table->integer('masteraboutme_id')->unsigned();
             $table->integer('index')->unique();
-            $table->string('string');
+            $table->string('skill');
             $table->integer('rating')->default(0);
             $table->timestamps();
         });
