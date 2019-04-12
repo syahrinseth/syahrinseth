@@ -25,7 +25,7 @@
                                         @endif
                                         @php
                                             // strip tags to avoid breaking any html
-                                            $body = strip_tags($MasterBlog->body);
+                                            $body = $MasterBlog->body;
                                             if (strlen($body) > 1000) {
 
                                                 // truncate string

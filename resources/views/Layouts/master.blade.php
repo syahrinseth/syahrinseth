@@ -5,7 +5,7 @@
 	<link rel="icon" type="image/png" href="../assets/paper_img/s-logo-blue.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="google-site-verification" content="w3q-0j_FB_tB2Sqj_UBZUlDHVq9tDFbs7pdrLsgl4d0" />
-	<meta name="description" content="Hi! I'm SYAHRIN SETH. A Software Engineer and a Martial Artist who design and code Web & Mobile Applications to life.">
+	<meta name="description" content="Syahrin Seth is a Malaysian Software Engineer and a Martial Artist who create web and mobile application to life.">
 	<meta name="keywords" content="web development, website, code, software engineer, development, syahrinseth, syahrin seth, programmer, mobile development, mobile apps, web apps, martial arts, travel, freelance">
 
 	<title>Syahrin Seth - @yield('title')</title>
@@ -34,7 +34,7 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            width: 40%;
+            width: 100%;
         }
     </style>
 
