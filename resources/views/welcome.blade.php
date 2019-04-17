@@ -49,7 +49,7 @@
                     <div class="row">
                         <div class="col-md-6" id="website-design">
                             <div><i class="fab fa-wordpress fa-7x"></i></div>
-                            <h2>Website Design</h2>
+                            <h2>Website Design/Development</h2>
                             <h5>Wordpress is web software that allows you to manage your own content, log into your website to blog, and upload media and update your own website. The websites I design will incorporate Wordpress so you can change your site anytime you want, at no cost.</h5>
                             <br />
                             <a href="{{route('/')}}#contact" class="btn">Contact Me</a>
@@ -68,9 +68,11 @@
                             <br />
                             <a href="{{route('/')}}#contact" class="btn">Contact Me</a>
                         </div> -->
+                    </div>
+                    <div class="row">
                         <div class="col-md-6" id="martial-arts-coaching">
                             <div><i class="fas fa-stopwatch fa-7x"></i></div>
-                            <h2>Taekwondo and Kickboxing Personal Training</h2>
+                            <h2>Taekwon-do and Kickboxing Personal Training</h2>
                             <h5></h5>
                             <br />
                             <a href="{{route('/')}}#contact" class="btn">Contact Me</a>
@@ -121,7 +123,7 @@
                                     @foreach($portfoliosRand as $item)
                                     <div class="item {{$counter == 0 ? 'active' : ''}}">
                                         <a href="#" data-toggle="modal" data-target="#id-{{$item->id}}" class="pointer">
-                                            <img src="/storage/portfolio/{{$item->cover_image}}" alt="Awesome Image" >
+                                            <img src="/storage/{{$item->cover_image}}" alt="Awesome Image" >
                                         </a>
                                     </div>
                                     @php
@@ -160,7 +162,7 @@
                             <img src="../assets/paper_img/syahrinseth2.jpg" alt="Thumbnail Image" class="img-circle img-responsive">
                             <h5>Syahrin Seth <br /><small class="">Software Engineer & Martial Artist</small></h5>
                             <!-- <h6>I'm Syah, a Web Application Developer and Photographer based in Shah Alam, MY.</h6> -->
-                            <p class="text-center">Syahrin Seth is a software engineer and martial artist, who currently working as a software engineer who specialised in web and mobile application development. He is also a martial arts coach who train people taekwondo and kickboxing.<br>
+                            <p class="text-center">Syahrin Seth is a software engineer and martial artist, who currently working as a software engineer who specialised in web and mobile application development. He is also a martial arts coach who train people taekwon-do and kickboxing.<br>
                             </p>
 
                         </div>
@@ -206,20 +208,20 @@
                     </div>
                     <br>
                     <div class="row">
-                        <div class="col-md-3">
-                            <a href="https://www.ge.com/power" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-gepower.png" style="width:150px;"></a>
+                        <div class="col-md-6 img-client-section">
+                            <a href="https://www.ge.com/power" target="_blank" class="img-client"><img src="/assets/img/clients/syahrinseth-gepower.png" style="width:150px;"></a>
                         </div>
-                        <div class="col-md-3">
-                            <a href="http://www.pheontech.com" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-pheontech.png" style="width:150px;"></a>
+                        <div class="col-md-6 img-client-section">
+                            <a href="http://www.pheontech.com" target="_blank" class="img-client"><img src="/assets/img/clients/syahrinseth-pheontech.png" style="width:150px;"></a>
                         </div>
-                        <div class="col-md-3">
-                            <a href="http://www.noorarfa.com/" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-noorarfa.png" style="width:150px;"></a>
+                        <div class="col-md-6 img-client-section">
+                            <a href="http://www.noorarfa.com/" target="_blank" class="img-client"><img src="/assets/img/clients/syahrinseth-noorarfa.png" style="width:150px;"></a>
                         </div>
-                        <div class="col-md-3">
-                            <a href="#" class="client-logo" target="_blank"><img src="/assets/img/clients/syahrinseth-ifctaekwondo.png" style="width:70px;"></a>
+                        <div class="col-md-6 img-client-section">
+                            <a href="#" class="img-client" target="_blank"><img src="/assets/img/clients/syahrinseth-umlivinglabsystem.png" style="width:150px;"></a>
                         </div>
-                        <div class="col-md-3">
-                            <a href="#" class="client-logo" target="_blank"><img src="/assets/img/clients/syahrinseth-umlivinglabsystem.png" style="width:150px;"></a>
+                        <div class="col-md-6 img-client-section">
+                            <a href="#" class="img-client" target="_blank"><img src="/assets/img/clients/syahrinseth-ifctaekwondo.png" style="width:70px;"></a>
                         </div>
                     </div>
                 </div>
@@ -294,4 +296,17 @@
             $('a[id="home-nav"]').attr('class', 'active');
         });
     </script>
+@endsection
+@section('custom-css')
+<style>
+    .img-client-section{
+        height: 100px;
+    }
+    .img-client{
+        height: 90px;
+        width: 300px;
+        padding: 9%;
+        margin: auto;
+    }
+</style>
 @endsection

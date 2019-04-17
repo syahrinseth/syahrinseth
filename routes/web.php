@@ -19,13 +19,13 @@ Route::post('/contact/send', 'syahrinsethController@contactSend')->name('contact
 // Blog
 Route::get('/blog/{slug}', 'syahrinsethBlogController@show')->name('show.blog');
 Route::get('/blog', 'syahrinsethBlogController@index')->name('index.blog');
-Route::get('/blog/category/{category}', 'syahrinsethBlogController@indexCategory')->name('indexCategory.blog');
+Route::get('/blog/category/{id}', 'syahrinsethBlogController@indexCategory')->name('indexCategory.blog');
 Route::post('/blog/create-blog-comment/{id}', 'syahrinsethBlogController@createBlogComment')->name('create_blog_comment.blog');
 
 // Portfolio
 Route::get('/portfolio', 'syahrinsethPortfolioController@index')->name('index.portfolio');
 Route::get('/portfolio/{id}', 'syahrinsethPortfolioController@show')->name('show.portfolio');
-Route::get('/portfolio/ajax/{id}', 'syahrinsethPortfolioController@ajaxShow')->name('ajaxShow.portfolio');
+Route::get('/portfolio/ajax-show/{id}', 'syahrinsethPortfolioController@ajaxShow')->name('ajaxShow.portfolio');
 
 
 

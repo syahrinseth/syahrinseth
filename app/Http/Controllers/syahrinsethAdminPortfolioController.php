@@ -56,7 +56,7 @@ class syahrinsethAdminPortfolioController extends Controller
             // Upload image
             $path = $request->cover_image->storeAs('public/portfolio/', $fileNameToStore);
 
-            $master_portfolio->cover_image = $fileNameToStore;
+            $master_portfolio->cover_image = 'portfolio/'.$fileNameToStore;
 
         }
         $master_portfolio->user_id = Auth::user()->id;
@@ -67,8 +67,7 @@ class syahrinsethAdminPortfolioController extends Controller
 
     public function edit($id){
         $portfolio = MasterPortfolio::findOrFail($id);
-        $portfolio_details = \DB::table('portfolio_details')->where('masterportfolios_id', $id)->get();
-        return view('adminportfolio.edit', compact('portfolio', 'portfolio_details'));
+        return view('adminportfolio.edit', compact('portfolio'));
     }
 
     public function update(Request $request, $id){
@@ -85,7 +84,7 @@ class syahrinsethAdminPortfolioController extends Controller
         if($request->cover_image){
 
             // Handle File Upload
-            Storage::delete('public/portfolio/'.$master_portfolio->cover_image);
+            Storage::delete('public/'.$master_portfolio->cover_image);
             // Get filename with the extension
             $filenameWithExt = $request->cover_image->getClientOriginalName();
             // Get just filename
@@ -97,7 +96,7 @@ class syahrinsethAdminPortfolioController extends Controller
             // Upload image
             $path = $request->cover_image->storeAs('public/portfolio/', $fileNameToStore);
 
-            $master_portfolio->cover_image = $fileNameToStore;
+            $master_portfolio->cover_image = 'portfolio/'.$fileNameToStore;
 
         }
         $master_portfolio->user_id = Auth::user()->id;
@@ -113,7 +112,7 @@ class syahrinsethAdminPortfolioController extends Controller
 
     public function destroy($id){
         $master_portfolio = MasterPortfolio::findOrFail($id);
-        Storage::delete('public/portfolio/'.$master_portfolio->cover_image);
+        Storage::delete('public/'.$master_portfolio->cover_image);
         $master_portfolio->delete();
         return redirect()->route('index.adminportfolio');
     }

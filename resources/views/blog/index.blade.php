@@ -7,14 +7,16 @@
             <div class="container">
                 @if(count($MasterBlogs) > 0)
                         <div class="row">
-                        <div class="col-md-3" style="float:right;">
+                            <div class="col-md-3" style="float:right;">
                                 <div class="panel">
                                     <div class="panel-body">
                                         <h6>Categories</h6>
                                         <hr>
+                                        <form action="" id="form-categories" method="get">
+                                        </form>
                                         <div class="form-group">
                                             <select name="categories" class="form-control" id="categories">
-                                                <option value="">select</option>
+                                                <option value="">All</option>
                                                 @if(count($categories) > 0)
                                                     @foreach($categories as $item)
                                                         <option value="{{$item->id}}" {{$category['id'] == $item->id ? 'selected' : ''}}>{{ucfirst($item->category)}}</option>
@@ -75,7 +77,27 @@
                         </div>
                     @else
                     <div class="row" style="height:500px;">
-                            <div class="col-md-10">
+                            <div class="col-md-3" style="float:right;">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <h6>Categories</h6>
+                                        <hr>
+                                        <form action="" id="form-categories" method="get">
+                                        </form>
+                                        <div class="form-group">
+                                            <select name="categories" class="form-control" id="categories">
+                                                <option value="">select</option>
+                                                @if(count($categories) > 0)
+                                                    @foreach($categories as $item)
+                                                        <option value="{{$item->id}}" {{$category['id'] == $item->id ? 'selected' : ''}}>{{ucfirst($item->category)}}</option>
+                                                    @endforeach
+                                                @endif
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
                                 <h1>Sorry, what you looking for are not here...</h1>
                             </div>
                     </div>
@@ -95,7 +117,13 @@
         var e = document.getElementById("categories");
         e.addEventListener("change", function(){
             var value = e.options[e.selectedIndex].value;
-            console.log(value);
+            var form = document.getElementById('form-categories');
+            if(value.length > 0){
+                form.setAttribute("action", '/blog/category/'+value);
+            }else{
+                form.setAttribute("action", '/blog');
+            }
+            $('#form-categories').submit();
 
         });
     });

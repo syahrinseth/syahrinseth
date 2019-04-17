@@ -59,7 +59,7 @@
                 <li><a href="{{route('dashboard')}}"> Admin Dashboard</a></li>
                 <li><a href="{{route('logout')}}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                 @else
-                <li><a href="{{route('login')}}"><i class="fas fa-sign-in"></i> Login</a></li>
+                <li><a href="{{route('login')}}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
                 @endif
                 <!-- <li><a href="#">Something else here</a></li>
                 <li class="divider"></li>

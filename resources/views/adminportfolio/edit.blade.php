@@ -70,7 +70,7 @@ body {
                 <div class="">
                     <label for="cover_image">Cover Image:</label>
                     @if($portfolio->cover_image)
-                    <img src="/storage/portfolio/{{$portfolio->cover_image}}" alt="Portfolio Cover Image" class="img-circle img-responsive" width="150px">
+                    <img src="/storage/{{$portfolio->cover_image}}" alt="Portfolio Cover Image" class="img-circle img-responsive" width="150px">
                     <br>
                     <br>
                     @endif

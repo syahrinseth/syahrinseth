@@ -30,11 +30,11 @@ class syahrinsethBlogController extends Controller
         return view('blog.index', compact('MasterBlogs', 'categories', 'category'));
     }
 
-    public function indexCategory($category)
+    public function indexCategory($id)
     {
         // GET DATA FROM DATABASE
-        $category = masterCategoriesModel::where('category', $category)->first();
-        $MasterBlogs = MasterBlog::leftJoin('blog_categories', 'blog_categories.masterblogs_id', '=', 'master_blogs.id')->where('blog_categories.mastercategories_id', $category->id)->where('master_blogs.publish', 1)->orderBy('master_blogs.created_at', 'desc')->paginate(5);
+        $category = masterCategoriesModel::find($id);
+        $MasterBlogs = BlogCategories::rightJoin('master_blogs', 'blog_categories.masterblogs_id', '=', 'master_blogs.id')->where('blog_categories.mastercategories_id', $id)->where('master_blogs.publish', 1)->orderBy('master_blogs.created_at', 'desc')->paginate(5);
         $categories = masterCategoriesModel::all();
         // SEND DATA TO VIEW
         return view('blog.index', compact('MasterBlogs', 'categories', 'category'));

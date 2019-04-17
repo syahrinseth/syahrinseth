@@ -39,7 +39,9 @@
             margin-right: auto;
             width: 100%;
         }
+
     </style>
+    @yield('custom-css')
 
 </head>
 <body>
