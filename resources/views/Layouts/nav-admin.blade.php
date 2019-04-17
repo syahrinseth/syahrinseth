@@ -44,7 +44,7 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="{{route('logout')}}">Logout</a>
+                  <a class="dropdown-item" href="{{route('logout')}}"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </div>
               </li>
               <!-- <li class="nav-item">

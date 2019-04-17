@@ -1,29 +1,28 @@
 @extends('Layouts.master')
 @section('title', 'Home')
 @section('content')
-@include('Layouts.message')
-@include('Layouts.validate')
 <div class="wrapper">
         <div class="landing-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('../assets/paper_img/coding-wallpaper2.jpg');">
             <div class="container">
                 <div class="motto text-white" style="text-align:center;">
-                    <h1 class="title-uppercase text-inline">Syahrin Seth</h1>
+                    <!-- <h1 class="title-uppercase text-inline">Syahrin Seth</h1> -->
+                    <img src="../assets/paper_img/syahrinseth-logo-web.png" alt="" style="width:280px;">
                     <br>
                     <br>
-                    <h2 class="text-white text-inline">A Software Engineer &<br></h2>
-                    <h2 class="text-white text-inline">Martial Artists<br></h2>
+                    <!-- <h2 class="text-white text-inline">A Software Engineer &<br></h2>
+                    <h2 class="text-white text-inline">Martial Artists<br></h2> -->
                     <!-- <h3 class="text-white text-right"><code>I design and code Web & Mobile Applications to life.</code></h3> -->
                     <br />
                     <div class="row">
                         <div class="col-xs-3"></div>
                         <div class="col-xs-2">
-                            <a href="https://www.instagram.com/syahrinseth" target="_blank" class=""><i class="fab fa-instagram fa-3x"></i></a>
+                            <a href="https://www.instagram.com/syahrinseth" target="_blank" class=""><i class="fab fa-instagram fa-2x"></i></a>
                         </div>
                         <div class="col-xs-2">
-                            <a href="https://www.github.com/syahrinseth" target="_blank" class=""><i class="fab fa-github fa-3x"></i></a>
+                            <a href="https://www.github.com/syahrinseth" target="_blank" class=""><i class="fab fa-github fa-2x"></i></a>
                         </div>
                         <div class="col-xs-2">
-                            <a href="https://www.linkedin.com/in/syahrinseth/" target="_blank" class=""><i class="fab fa-linkedin fa-3x"></i></a>
+                            <a href="https://www.linkedin.com/in/syahrinseth/" target="_blank" class=""><i class="fab fa-linkedin fa-2x"></i></a>
                         </div>
                         <div class="col-xs-3"></div>
                     </div>
@@ -50,15 +49,15 @@
                     <div class="row">
                         <div class="col-md-6" id="website-design">
                             <div><i class="fab fa-wordpress fa-7x"></i></div>
-                                <h2>Website Design</h2>
-                                <h5>Wordpress is web software that allows you to manage your own content, log into your website to blog, and upload media and update your own website. The websites I design will incorporate Wordpress so you can change your site anytime you want, at no cost.</h5>
-                                <br />
-                                <a href="{{route('/')}}#contact" class="btn">Contact Me</a>
+                            <h2>Website Design</h2>
+                            <h5>Wordpress is web software that allows you to manage your own content, log into your website to blog, and upload media and update your own website. The websites I design will incorporate Wordpress so you can change your site anytime you want, at no cost.</h5>
+                            <br />
+                            <a href="{{route('/')}}#contact" class="btn">Contact Me</a>
                         </div>
                         <div class="col-md-6" id="webdev">
                             <div><i class="fas fa-laptop-code fa-7x"></i></div>
                             <h2>Web Applications Development</h2>
-                            <h5>I design and develop responsive custom web applications that looks great on your desktop computer, tablet and mobile devices. I also use laravel to develop web application with CMS, e-commerce website according to the client needs..</h5>
+                            <h5>I design and develop responsive custom web applications that looks great on your desktop computer, tablet and mobile devices. I also use laravel to develop web application with CMS according to the client needs.</h5>
                             <br />
                             <a href="{{route('/')}}#contact" class="btn">Contact Me</a>
                         </div>
@@ -70,8 +69,8 @@
                             <a href="{{route('/')}}#contact" class="btn">Contact Me</a>
                         </div> -->
                         <div class="col-md-6" id="martial-arts-coaching">
-                            <div><i class="fas fa-dumbbell fa-7x"></i></div>
-                            <h2>Martial Arts Coaching</h2>
+                            <div><i class="fas fa-stopwatch fa-7x"></i></div>
+                            <h2>Taekwondo and Kickboxing Personal Training</h2>
                             <h5></h5>
                             <br />
                             <a href="{{route('/')}}#contact" class="btn">Contact Me</a>
@@ -205,19 +204,22 @@
                     <div class="row">
                         <h3>I'm proud to have collaborated<br> with some awesome companies</h3>
                     </div>
-                    <br><br>
+                    <br>
                     <div class="row">
                         <div class="col-md-3">
-                            <a href="https://www.ge.com/power" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-gepower.png" style="width:250px;padding:40px;"></a>
+                            <a href="https://www.ge.com/power" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-gepower.png" style="width:150px;"></a>
                         </div>
                         <div class="col-md-3">
-                            <a href="http://www.pheontech.com" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-pheontech.png" style="width:250px;padding:40px;"></a>
+                            <a href="http://www.pheontech.com" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-pheontech.png" style="width:150px;"></a>
                         </div>
                         <div class="col-md-3">
-                            <a href="http://www.noorarfa.com/" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-noorarfa.png" style="width:250px;padding:40px;"></a>
+                            <a href="http://www.noorarfa.com/" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-noorarfa.png" style="width:150px;"></a>
                         </div>
                         <div class="col-md-3">
-                            <a href="#" class="client-logo" target="_blank"><img src="/assets/img/clients/syahrinseth-ifctaekwondo.png" style="width:120px;padding:20px;"></a>
+                            <a href="#" class="client-logo" target="_blank"><img src="/assets/img/clients/syahrinseth-ifctaekwondo.png" style="width:70px;"></a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="#" class="client-logo" target="_blank"><img src="/assets/img/clients/syahrinseth-umlivinglabsystem.png" style="width:150px;"></a>
                         </div>
                     </div>
                 </div>

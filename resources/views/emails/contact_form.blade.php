@@ -4,11 +4,7 @@
 	<meta charset="utf-8" />
 	<link rel="icon" type="image/png" href="../assets/paper_img/s-logo-blue.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<meta name="google-site-verification" content="w3q-0j_FB_tB2Sqj_UBZUlDHVq9tDFbs7pdrLsgl4d0" />
-	<meta name="description" content="Syahrin Seth is a Malaysian Software Engineer and a Martial Artist who create web and mobile application to life.">
-	<meta name="keywords" content="web development, website, code, software engineer, development, syahrinseth, syahrin seth, programmer, mobile development, mobile apps, web apps, martial arts, travel, freelance">
-
-	<title>Syahrin Seth - @yield('title')</title>
+	<title>Syahrin Seth Contact Form</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -43,17 +39,30 @@
 
 </head>
 <body>
-
-    @include('Layouts.nav')
-
-    @include('Layouts.validate')
-    @include('Layouts.message')
-
-    @yield('content')
-
-    @include('Layouts.footer')
-
-
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Contact Form</h1>
+                <div class="card">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <br>
+                        <p>{{$contactForm->name}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Email:</label>
+                        <br>
+                        <p>{{$contactForm->email}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Message:</label>
+                        <br>
+                        <p>{{$contactForm->message}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 <script src="/assets/js/jquery-1.10.2.js" type="text/javascript"></script>
@@ -84,7 +93,5 @@
 
 <!-- Code Syntex highlight -->
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-
-@yield('custom-javascript')
 
 </html>

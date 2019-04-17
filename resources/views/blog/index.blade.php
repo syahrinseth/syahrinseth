@@ -6,9 +6,27 @@
         <div class="section">
             <div class="container">
                 @if(count($MasterBlogs) > 0)
-                    @foreach($MasterBlogs as $MasterBlog)
                         <div class="row">
-                            <div class="col-md-10">
+                        <div class="col-md-3" style="float:right;">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <h6>Categories</h6>
+                                        <hr>
+                                        <div class="form-group">
+                                            <select name="categories" class="form-control" id="categories">
+                                                <option value="">select</option>
+                                                @if(count($categories) > 0)
+                                                    @foreach($categories as $item)
+                                                        <option value="{{$item->id}}" {{$category['id'] == $item->id ? 'selected' : ''}}>{{ucfirst($item->category)}}</option>
+                                                    @endforeach
+                                                @endif
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @foreach($MasterBlogs as $MasterBlog)
+                            <div class="col-md-9">
                                 <h1><a href="{{route('show.blog', [ 'slug' => $MasterBlog->slug ])}}">{{ucfirst($MasterBlog->title)}}</a></h1>
                                 <h6>by <strong>{{$MasterBlog->author}}</strong></h6>
                                 <p>{{\Carbon\Carbon::createFromTimeStamp(strtotime($MasterBlog->created_at))->formatLocalized('%A %d %B %Y')}}</p>
@@ -44,11 +62,10 @@
                                 </div>
                                 <hr>
                             </div>
-                            <div class="col-md-2">
+                            @endforeach
 
-                            </div>
+
                         </div>
-                        @endforeach
                         <div class="row">
                             <div class="col-md-10">
                                 <div style="float:right">
@@ -74,6 +91,13 @@
 <script>
     jQuery(document).ready(function(){
         $('a[id="blog-nav"]').attr('class', 'active');
+
+        var e = document.getElementById("categories");
+        e.addEventListener("change", function(){
+            var value = e.options[e.selectedIndex].value;
+            console.log(value);
+
+        });
     });
 </script>
 @endsection

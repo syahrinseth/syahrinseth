@@ -19,6 +19,7 @@ Route::post('/contact/send', 'syahrinsethController@contactSend')->name('contact
 // Blog
 Route::get('/blog/{slug}', 'syahrinsethBlogController@show')->name('show.blog');
 Route::get('/blog', 'syahrinsethBlogController@index')->name('index.blog');
+Route::get('/blog/category/{category}', 'syahrinsethBlogController@indexCategory')->name('indexCategory.blog');
 Route::post('/blog/create-blog-comment/{id}', 'syahrinsethBlogController@createBlogComment')->name('create_blog_comment.blog');
 
 // Portfolio
@@ -52,11 +53,11 @@ Route::post('/admin-blog/destroy/{id}', 'syahrinsethAdminBlogController@destroy'
 Route::get('/admin-blog/{slug}/', 'syahrinsethAdminBlogController@show')->name('show.adminblog');
 
 // Message
-Route::get('/admin-message', 'syahrinsethAdminMessageController@index')->name('index.adminmessage');
-Route::get('/admin-message/{id}', 'syahrinsethAdminMessageController@show')->name('show.adminmessage');
-Route::get('/admin-message/delete/{id}', 'syahrinsethAdminMessageController@delete')->name('delete.adminmessage');
-Route::post('/admin-message/destroy/{id}', 'syahrinsethAdminMessageController@destroy')->name('destroy.adminmessage');
-Route::get('admin-message/ajax/{id}', 'syahrinsethAdminMessageController@ajax')->name('ajax.adminmessage');
+// Route::get('/admin-message', 'syahrinsethAdminMessageController@index')->name('index.adminmessage');
+// Route::get('/admin-message/{id}', 'syahrinsethAdminMessageController@show')->name('show.adminmessage');
+// Route::get('/admin-message/delete/{id}', 'syahrinsethAdminMessageController@delete')->name('delete.adminmessage');
+// Route::post('/admin-message/destroy/{id}', 'syahrinsethAdminMessageController@destroy')->name('destroy.adminmessage');
+// Route::get('admin-message/ajax/{id}', 'syahrinsethAdminMessageController@ajax')->name('ajax.adminmessage');
 
 // Portfolio
 Route::get('admin-portfolio', 'syahrinsethAdminPortfolioController@index')->name('index.adminportfolio');

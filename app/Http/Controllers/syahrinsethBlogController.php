@@ -24,8 +24,20 @@ class syahrinsethBlogController extends Controller
     {
         // GET DATA FROM DATABASE
         $MasterBlogs = MasterBlog::where('publish', 1)->orderBy('created_at', 'desc')->paginate(5);
+        $categories = masterCategoriesModel::all();
+        $category = null;
         // SEND DATA TO VIEW
-        return view('blog.index', compact('MasterBlogs'));
+        return view('blog.index', compact('MasterBlogs', 'categories', 'category'));
+    }
+
+    public function indexCategory($category)
+    {
+        // GET DATA FROM DATABASE
+        $category = masterCategoriesModel::where('category', $category)->first();
+        $MasterBlogs = MasterBlog::leftJoin('blog_categories', 'blog_categories.masterblogs_id', '=', 'master_blogs.id')->where('blog_categories.mastercategories_id', $category->id)->where('master_blogs.publish', 1)->orderBy('master_blogs.created_at', 'desc')->paginate(5);
+        $categories = masterCategoriesModel::all();
+        // SEND DATA TO VIEW
+        return view('blog.index', compact('MasterBlogs', 'categories', 'category'));
     }
 
     /**
