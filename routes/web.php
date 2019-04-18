@@ -69,3 +69,30 @@ Route::post('admin-portfolio/update/{id}', 'syahrinsethAdminPortfolioController@
 Route::get('admin-portfolio/delete/{id}', 'syahrinsethAdminPortfolioController@delete')->name('delete.adminportfolio');
 Route::post('admin-portfolio/destroy/{id}', 'syahrinsethAdminPortfolioController@destroy')->name('destroy.adminportfolio');
 // --------------------------------------------------------------------------
+
+//Alternate route for access storage file due to cpanel hosting security issue
+Route::get('storage/portfolio/{filename}', function ($filename)
+{
+    if (!Storage::exists('public/portfolio/'.$filename)) {
+        abort(404);
+    }
+    $file = Storage::get('public/portfolio/'.$filename);
+    $type = Storage::mimeType('public/portfolio/'.$filename);
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+
+    return $response;
+});
+
+Route::get('storage/blog/{filename}', function ($filename)
+{
+    if (!Storage::exists('public/blog/'.$filename)) {
+        abort(404);
+    }
+    $file = Storage::get('public/blog/'.$filename);
+    $type = Storage::mimeType('public/blog/'.$filename);
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+
+    return $response;
+});
