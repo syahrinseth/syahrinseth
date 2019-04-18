@@ -2,12 +2,23 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Contact extends Model
+class Contact
 {
-    // Model for contact table
-    protected $table = 'contact';
-    protected $primaryKey = 'id';
-    protected $guarded = [];
+    public $name;
+    public $email;
+    public $message;
+
+    public function __construct($name, $email, $message){
+        $this->name = $name;
+        $this->email = $email;
+        $this->message = $message;
+    }
+
+    public function all(){
+        return [
+            'name' => $this->$name,
+            'email' => $this->email,
+            'message' => $this->message
+        ];
+    }
 }

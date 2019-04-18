@@ -3,13 +3,13 @@
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
       <div class="logo">
-        <a href="{{route('dashboard')}}" class="simple-text logo-mini">
+        <a href="{{route('index.adminblog')}}" class="simple-text logo-mini">
           <div class="logo-image-small">
             <img src="/assets/paper_img/s-logo-blue.png" alt="Thumbnail Image" class="img-responsive">
           </div>
         </a>
         <a href="{{route('dashboard')}}" class="simple-text logo-normal">
-          Syahrin Seth
+          {{ucfirst(Auth::user()->name)}}
           <!-- <div class="logo-image-big">
             <img src="../admin-assets/img/logo-big.png">
           </div> -->
@@ -47,21 +47,12 @@
               <p>Visitors</p>
             </a>
           </li> -->
-          @if(Auth::user()->user_type == "admin")
-          <li id="messages">
-            <a href="{{route('index.adminmessage')}}">
-              <i class="nc-icon nc-chat-33"></i>
-              <p>Messages</p>
-            </a>
-          </li>
-
           <li id="tracker">
             <a href="/stats" target="_blank">
               <i class="nc-icon nc-chart-bar-32"></i>
               <p>Tracker</p>
             </a>
           </li>
-          @endif
           <!-- <li id="my-profile">
             <a href="./tables.html">
               <i class="nc-icon nc-badge"></i>
@@ -70,7 +61,7 @@
           </li> -->
           <li id="logout" class="active-pro">
             <a href="{{route('logout')}}">
-              <i class="nc-icon nc-spaceship"></i>
+              <i class="fas fa-sign-out-alt"></i>
               <p>Logout</p>
             </a>
           </li>

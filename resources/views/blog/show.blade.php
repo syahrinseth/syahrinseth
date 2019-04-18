@@ -7,7 +7,7 @@
         <div class="section">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-10">
+                    <div class="col-md-12">
                         <h1>{{ucfirst($MasterBlog->title)}}</h1>
                         <h6>by <strong>{{$MasterBlog->author}}</strong></h6>
                         <p>{{\Carbon\Carbon::createFromTimeStamp(strtotime($MasterBlog->created_at))->formatLocalized('%A %d %B %Y')}}</p>
@@ -88,7 +88,7 @@
                                     <div class="panel-footer">
                                         @php
                                             // strip tags to avoid breaking any html
-                                            $body = strip_tags($post->body);
+                                            $body = $post->body;
                                             if (strlen($body) > 100) {
 
                                                 // truncate string

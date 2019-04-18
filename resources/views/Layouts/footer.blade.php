@@ -21,7 +21,7 @@
                     @if(Auth::user())
 
                         <a href="{{route('dashboard')}}">
-                           Dashboard
+                           Admin Dashboard
                         </a>
 
                     @else

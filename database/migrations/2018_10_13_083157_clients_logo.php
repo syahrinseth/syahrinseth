@@ -15,18 +15,9 @@ class ClientsLogo extends Migration
     {
         Schema::create('client_logos', function(Blueprint $table){
             $table->increments('id');
-            $table->integer('masterportfolios_id')->unsigned();
             $table->string('company_logo');
             $table->timestamps();
         });
-        if (Schema::hasTable('master_portfolios')) {
-            Schema::table('client_logos', function(Blueprint $table){
-                $table->foreign('masterportfolios_id')
-                ->references('id')
-                ->on('master_portfolios')
-                ->onDelete('cascade');
-            });
-        }
     }
 
     /**
@@ -36,11 +27,6 @@ class ClientsLogo extends Migration
      */
     public function down()
     {
-        if (Schema::hasTable('client_logos')) {
-            Schema::table('client_logos', function(Blueprint $table){
-                $table->dropForeign(['masterportfolios_id']);
-            });
-        }
         Schema::dropIfExists('client_logos');
     }
 }

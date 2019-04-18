@@ -2,7 +2,12 @@
 @section('title', 'Home')
 @section('content')
 <div class="content">
-        <div class="row">
+<div class="card">
+    <div class="card-body">
+        <p class="card-category">Dashboard Coming Soon!</p>
+    </div>
+</div>
+        <!-- <div class="row">
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="card card-stats">
               <div class="card-body ">
@@ -126,7 +131,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <!-- <div class="row">
           <div class="col-md-4">
             <div class="card ">

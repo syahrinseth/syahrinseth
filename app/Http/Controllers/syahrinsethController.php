@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
 use App\Contact;
 use App\MasterPortfolio;
+use App\Mail\ContactForm;
+
 class syahrinsethController extends Controller
 {
     /**
@@ -61,17 +65,16 @@ class syahrinsethController extends Controller
     {
         // post method from client (contact form)
         $this->validate(request(), [
-            'email'=>'required|unique:contact,email'
+            'email'=>'required'
         ]);
-        $contact = new Contact;
-        $contact->name = $request->name;
-        $contact->email = $request->email;
-        $contact->message = $request->message;
-        $contact->save();
-        $request->session()->flash('alert-success', 'Send success');
+
+        Mail::to('syah@syahrinseth.com')->send(new ContactForm(new Contact(
+            $request->name,
+            $request->email,
+            $request->message
+        )));
+        $request->session()->flash('alert-success', 'Message Send.');
         return back();
-
-
 
     }
 

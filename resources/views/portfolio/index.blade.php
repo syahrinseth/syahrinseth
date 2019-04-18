@@ -24,7 +24,7 @@
                                 <div class="tile scale-anm {{$item->project_type}} all">
                                     @if($item->cover_image != null)
                                         <a href="#" data-toggle="modal" data-target="#portfolio_modal" class="pointer portfolio-pointer" id="{{$item->id}}">
-                                        <img src="storage/portfolio/{{$item->cover_image}}" alt="{{pathinfo($item->cover_image, PATHINFO_FILENAME)}}" /></a>
+                                        <img src="storage/{{$item->cover_image}}" alt="{{pathinfo($item->cover_image, PATHINFO_FILENAME)}}" /></a>
                                     @else
                                         <img src="http://demo.themerain.com/charm/wp-content/uploads/2015/04/2-mon_1092-300x234.jpg" alt="" />
                                     @endif
@@ -66,7 +66,7 @@
           <img src="" id="portfolio_modal_coverimage" class="img-fluid text-center" alt="" width="50%" style="display: block;margin-left: auto;margin-right: auto;">
       </div>
       <div class="modal-body" id="portfolio_modal_projectdesc">
-          No Data.
+
       </div>
       <div>
           <div class="row" id="portfolio_modal_moredesc">
@@ -107,27 +107,26 @@
         @endif
 
         $(document).on('click', 'a.portfolio-pointer', function(){
+
+            $('h4#portfolio_modal_title').html("");
+            $('div#portfolio_modal_projectdesc').html('<div class="row text-center"><i class="fas fa-spinner fa-spin"></i></div>');
+            $('h6#portfolio_modal_projecttype').html("");
+            $('img#portfolio_modal_coverimage').attr('src', "");
+
             var id = $(this).attr('id');
             if(id != null){
                 $.ajax({
-                    url: "/portfolio/ajax/" + id,
+                    url: "/portfolio/ajax-show/" + id,
                     method: 'get',
                     dataType: 'json',
                     success: function(result){
                         console.log(result);
                         var jsonStr = JSON.stringify(result);
                         var obj = JSON.parse(jsonStr);
-                        if(obj.length > 0){
-                            $('h4#portfolio_modal_title').html(obj[0].project_name);
-                            $('div#portfolio_modal_projectdesc').html('<h6>Project Description:</h6><br>'+obj[0].project_desc);
-                            $('h6#portfolio_modal_projecttype').html(obj[0].project_type);
-                            $('img#portfolio_modal_coverimage').attr('src', '/storage/portfolio/' + obj[0].cover_image);
-                            $.each(obj, function(i,item){
-                                if(item.id != null){
-                                    $('div#portfolio_modal_moredesc').append('<div class="col-md-6 moreimages"><img src="/storage/portfolio/desc/' + item.project_img + '" class="img-fluid text-center" alt="" width="50%"></div>');
-                                }
-                            });
-                        }
+                            $('h4#portfolio_modal_title').html(obj.project_name);
+                            $('div#portfolio_modal_projectdesc').html('<h6>Project Description:</h6><br>'+obj.project_desc);
+                            $('h6#portfolio_modal_projecttype').html(obj.project_type);
+                            $('img#portfolio_modal_coverimage').attr('src', '/storage/' + obj.cover_image);
 
 
                     },
@@ -142,7 +141,7 @@
 
         });
 
-});
+    });
 </script>
 @endsection
 

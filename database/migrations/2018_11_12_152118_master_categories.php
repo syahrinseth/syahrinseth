@@ -17,7 +17,6 @@ class MasterCategories extends Migration
             $table->increments('id');
             $table->string('category');
             $table->string('description');
-            $table->integer('parent_category')->default(NULL);
             $table->timestamps();
         });
 

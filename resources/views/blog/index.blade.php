@@ -6,9 +6,29 @@
         <div class="section">
             <div class="container">
                 @if(count($MasterBlogs) > 0)
-                    @foreach($MasterBlogs as $MasterBlog)
                         <div class="row">
-                            <div class="col-md-10">
+                            <div class="col-md-3" style="float:right;">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <h6>Categories</h6>
+                                        <hr>
+                                        <form action="" id="form-categories" method="get">
+                                        </form>
+                                        <div class="form-group">
+                                            <select name="categories" class="form-control" id="categories">
+                                                <option value="">All</option>
+                                                @if(count($categories) > 0)
+                                                    @foreach($categories as $item)
+                                                        <option value="{{$item->id}}" {{$category['id'] == $item->id ? 'selected' : ''}}>{{ucfirst($item->category)}}</option>
+                                                    @endforeach
+                                                @endif
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @foreach($MasterBlogs as $MasterBlog)
+                            <div class="col-md-9">
                                 <h1><a href="{{route('show.blog', [ 'slug' => $MasterBlog->slug ])}}">{{ucfirst($MasterBlog->title)}}</a></h1>
                                 <h6>by <strong>{{$MasterBlog->author}}</strong></h6>
                                 <p>{{\Carbon\Carbon::createFromTimeStamp(strtotime($MasterBlog->created_at))->formatLocalized('%A %d %B %Y')}}</p>
@@ -25,7 +45,7 @@
                                         @endif
                                         @php
                                             // strip tags to avoid breaking any html
-                                            $body = strip_tags($MasterBlog->body);
+                                            $body = $MasterBlog->body;
                                             if (strlen($body) > 1000) {
 
                                                 // truncate string
@@ -44,11 +64,10 @@
                                 </div>
                                 <hr>
                             </div>
-                            <div class="col-md-2">
+                            @endforeach
 
-                            </div>
+
                         </div>
-                        @endforeach
                         <div class="row">
                             <div class="col-md-10">
                                 <div style="float:right">
@@ -58,7 +77,27 @@
                         </div>
                     @else
                     <div class="row" style="height:500px;">
-                            <div class="col-md-10">
+                            <div class="col-md-3" style="float:right;">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <h6>Categories</h6>
+                                        <hr>
+                                        <form action="" id="form-categories" method="get">
+                                        </form>
+                                        <div class="form-group">
+                                            <select name="categories" class="form-control" id="categories">
+                                                <option value="">select</option>
+                                                @if(count($categories) > 0)
+                                                    @foreach($categories as $item)
+                                                        <option value="{{$item->id}}" {{$category['id'] == $item->id ? 'selected' : ''}}>{{ucfirst($item->category)}}</option>
+                                                    @endforeach
+                                                @endif
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
                                 <h1>Sorry, what you looking for are not here...</h1>
                             </div>
                     </div>
@@ -74,6 +113,19 @@
 <script>
     jQuery(document).ready(function(){
         $('a[id="blog-nav"]').attr('class', 'active');
+
+        var e = document.getElementById("categories");
+        e.addEventListener("change", function(){
+            var value = e.options[e.selectedIndex].value;
+            var form = document.getElementById('form-categories');
+            if(value.length > 0){
+                form.setAttribute("action", '/blog/category/'+value);
+            }else{
+                form.setAttribute("action", '/blog');
+            }
+            $('#form-categories').submit();
+
+        });
     });
 </script>
 @endsection

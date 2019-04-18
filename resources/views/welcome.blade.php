@@ -1,19 +1,35 @@
 @extends('Layouts.master')
 @section('title', 'Home')
 @section('content')
-@include('Layouts.message')
-@include('Layouts.validate')
 <div class="wrapper">
-        <div class="landing-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url('../assets/paper_img/coding-wallpaper2.jpg');">
+        <div class="landing-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('../assets/paper_img/coding-wallpaper2.jpg');">
             <div class="container">
-                <div class="motto text-white text-center">
-                    <h2 class="text-white text-inline">Hi! My name is </h2> <h1 class="title-uppercase text-inline">{ <code>Syahrin Seth</code> }.</h1>
+                <div class="motto text-white" style="text-align:center;">
+                    <!-- <h1 class="title-uppercase text-inline">Syahrin Seth</h1> -->
+                    <img src="../assets/paper_img/syahrinseth-logo-web.png" alt="" style="width:280px;">
                     <br>
                     <br>
-                    <h2 class="text-white text-inline">A Software Engineer,<br></h2>
-                    <h2 class="text-white text-inline">Martial Artists.<br></h2>
+                    <!-- <h2 class="text-white text-inline">A Software Engineer &<br></h2>
+                    <h2 class="text-white text-inline">Martial Artists<br></h2> -->
                     <!-- <h3 class="text-white text-right"><code>I design and code Web & Mobile Applications to life.</code></h3> -->
                     <br />
+                    <div class="row">
+                        <div class="col-xs-3"></div>
+                        <div class="col-xs-2">
+                            <a href="https://www.instagram.com/syahrinseth" target="_blank" class=""><i class="fab fa-instagram fa-2x"></i></a>
+                        </div>
+                        <div class="col-xs-2">
+                            <a href="https://www.github.com/syahrinseth" target="_blank" class=""><i class="fab fa-github fa-2x"></i></a>
+                        </div>
+                        <div class="col-xs-2">
+                            <a href="https://www.linkedin.com/in/syahrinseth/" target="_blank" class=""><i class="fab fa-linkedin fa-2x"></i></a>
+                        </div>
+                        <div class="col-xs-3"></div>
+                    </div>
+
+
+
+
                     <!-- <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-primary"><i class="fa fa-play"></i>Watch video</a> -->
                     <!-- <a class="btn btn-danger">Web Application Development</a>
                     <a class="btn btn-danger">Wordpress CMS</a> -->
@@ -31,20 +47,37 @@
                     </div>
                     <br>
                     <div class="row">
-                        <div class="col-md" id="webdev">
-                            <div><i class="fas fa-laptop-code fa-7x"></i></div>
-                            <h2>Web Applications Development</h2>
-                            <h5>I design and develop responsive custom websites or web applications that looks great on your desktop computer, tablet and mobile devices. I also use wordpress to develop simple landing page with CMS and e-commerce website to the clients. Wordpress is web software that allows you to manage your own content, log into your website to blog, and upload media and update your own website. The websites I create incorporate Wordpress so you can change your site anytime you want, at no cost.</h5>
+                        <div class="col-md-6" id="website-design">
+                            <div><i class="fab fa-wordpress fa-7x"></i></div>
+                            <h2>Website Design/Development</h2>
+                            <h5>Wordpress is web software that allows you to manage your own content, log into your website to blog, and upload media and update your own website. The websites I design will incorporate Wordpress so you can change your site anytime you want, at no cost.</h5>
                             <br />
                             <a href="{{route('/')}}#contact" class="btn">Contact Me</a>
                         </div>
-                        <!-- <div class="col-md-6" id="wordpress">
-                            <div><i class="fab fa-wordpress fa-7x"></i></div>
-                                <h2></h2>
-                                <h5>Wordpress is web software that allows you to manage your own content, log into your website to blog, and upload media and update your own website. The websites I create incorporate Wordpress so you can change your site anytime you want, at no cost.</h5>
-                                <br />
-                                <a href="{{route('/')}}#contact" class="btn">Contact Me</a>
+                        <div class="col-md-6" id="webdev">
+                            <div><i class="fas fa-laptop-code fa-7x"></i></div>
+                            <h2>Web Applications Development</h2>
+                            <h5>I design and develop responsive custom web applications that looks great on your desktop computer, tablet and mobile devices. I also use laravel to develop web application with CMS according to the client needs.</h5>
+                            <br />
+                            <a href="{{route('/')}}#contact" class="btn">Contact Me</a>
+                        </div>
+                        <!-- <div class="col-md-6" id="mobile-application-development">
+                            <div><i class="fas fa-mobile fa-7x"></i></div>
+                            <h2>Mobile Applications Development</h2>
+                            <h5></h5>
+                            <br />
+                            <a href="{{route('/')}}#contact" class="btn">Contact Me</a>
                         </div> -->
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6" id="martial-arts-coaching">
+                            <div><i class="fas fa-stopwatch fa-7x"></i></div>
+                            <h2>Taekwon-do and Kickboxing Personal Training</h2>
+                            <h5></h5>
+                            <br />
+                            <a href="{{route('/')}}#contact" class="btn">Contact Me</a>
+                        </div>
+
                         <!-- <div class="col-md-4" id="graphicdesign">
                             <div><i class="fas fa-pencil-alt fa-7x"></i></div>
                                 <h2>Graphic Design</h2>
@@ -90,7 +123,7 @@
                                     @foreach($portfoliosRand as $item)
                                     <div class="item {{$counter == 0 ? 'active' : ''}}">
                                         <a href="#" data-toggle="modal" data-target="#id-{{$item->id}}" class="pointer">
-                                            <img src="/storage/portfolio/{{$item->cover_image}}" alt="Awesome Image" >
+                                            <img src="/storage/{{$item->cover_image}}" alt="Awesome Image" >
                                         </a>
                                     </div>
                                     @php
@@ -129,87 +162,9 @@
                             <img src="../assets/paper_img/syahrinseth2.jpg" alt="Thumbnail Image" class="img-circle img-responsive">
                             <h5>Syahrin Seth <br /><small class="">Software Engineer & Martial Artist</small></h5>
                             <!-- <h6>I'm Syah, a Web Application Developer and Photographer based in Shah Alam, MY.</h6> -->
-                            <p class="text-center">I'm Syahrin Seth, software engineer and martial artist, working full-time in web and mobile application development and part-time as a martial arts instructor. If you have a project that needs some websites or web applications then that's where I come in. <br>
-                            My Job is to build your website or web application so that it is functional and user-friendly. Moreover, I add a personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way.
-                            <br><br>
-                            Hire me, I'm really good.
+                            <p class="text-center">Syahrin Seth is a software engineer and martial artist, who currently working as a software engineer who specialised in web and mobile application development. He is also a martial arts coach who train people taekwon-do and kickboxing.<br>
                             </p>
-                            <div class="row">
-                                <div class="col-md-10 col-md-offset-1">
-                                    <h4>Tech Skills Highlights</h4>
-                                    <div class="table-responsive">
-                                        <table class="table">
-                                            <thead class="">
-                                                <tr>
-                                                    <th> Technologies </th>
-                                                    <th> Skills </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr class="text-left">
-                                                    <td> HTML 5 </td>
-                                                    <td> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> </td>
-                                                </tr>
-                                                <tr class="text-left">
-                                                    <td> CSS 3 </td>
-                                                    <td> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </td>
-                                                </tr>
-                                                <tr class="text-left">
-                                                    <td> Bootstrap 4 </td>
-                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></i><i class="far fa-star"></i> </td>
-                                                </tr>
-                                                <tr class="text-left">
-                                                    <td> Javascript </td>
-                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </td>
-                                                </tr>
-                                                <tr class="text-left">
-                                                    <td> PHP </td>
-                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></i><i class="far fa-star"></i> </td>
-                                                </tr>
-                                                <tr class="text-left">
-                                                    <td> C# </td>
-                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i> </td>
-                                                </tr>
-                                                <tr class="text-left">
-                                                    <td> Visual Basic </td>
-                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i> </td>
-                                                </tr>
-                                                <tr class="text-left">
-                                                    <td> SQL </td>
-                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </td>
-                                                </tr>
-                                                <tr class="text-left">
-                                                    <td> jQuery  </td>
-                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> </td>
-                                                </tr>
-                                                <tr class="text-left">
-                                                    <td> Laravel 5  </td>
-                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> </td>
-                                                </tr>
-                                                <tr class="text-left">
-                                                    <td> ASP.NET Core </td>
-                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </td>
-                                                </tr>
-                                                <tr class="text-left">
-                                                    <td> Ionic Framework  </td>
-                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </td>
-                                                </tr>
-                                                <tr class="text-left">
-                                                    <td> Angular  </td>
-                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </td>
-                                                </tr>
-                                                <tr class="text-left">
-                                                    <td> MySQL  </td>
-                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></i><i class="far fa-star"></i> </td>
-                                                </tr>
-                                                <tr class="text-left">
-                                                    <td> SQL Server  </td>
-                                                    <td class="text-left"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> </td>
-                                                </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -251,19 +206,22 @@
                     <div class="row">
                         <h3>I'm proud to have collaborated<br> with some awesome companies</h3>
                     </div>
-                    <br><br>
+                    <br>
                     <div class="row">
-                        <div class="col-md-3">
-                            <a href="https://www.ge.com/power" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-gepower.png" style="width:250px;padding:40px;"></a>
+                        <div class="col-md-6 img-client-section">
+                            <a href="https://www.ge.com/power" target="_blank" class="img-client"><img src="/assets/img/clients/syahrinseth-gepower.png" style="width:150px;"></a>
                         </div>
-                        <div class="col-md-3">
-                            <a href="http://www.pheontech.com" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-pheontech.png" style="width:250px;padding:40px;"></a>
+                        <div class="col-md-6 img-client-section">
+                            <a href="http://www.pheontech.com" target="_blank" class="img-client"><img src="/assets/img/clients/syahrinseth-pheontech.png" style="width:150px;"></a>
                         </div>
-                        <div class="col-md-3">
-                            <a href="http://www.noorarfa.com/" target="_blank" class="client-logo"><img src="/assets/img/clients/syahrinseth-noorarfa.png" style="width:250px;padding:40px;"></a>
+                        <div class="col-md-6 img-client-section">
+                            <a href="http://www.noorarfa.com/" target="_blank" class="img-client"><img src="/assets/img/clients/syahrinseth-noorarfa.png" style="width:150px;"></a>
                         </div>
-                        <div class="col-md-3">
-                            <a href="#" class="client-logo" target="_blank"><img src="/assets/img/clients/syahrinseth-ifctaekwondo.png" style="width:120px;padding:20px;"></a>
+                        <div class="col-md-6 img-client-section">
+                            <a href="#" class="img-client" target="_blank"><img src="/assets/img/clients/syahrinseth-umlivinglabsystem.png" style="width:150px;"></a>
+                        </div>
+                        <div class="col-md-6 img-client-section">
+                            <a href="#" class="img-client" target="_blank"><img src="/assets/img/clients/syahrinseth-ifctaekwondo.png" style="width:70px;"></a>
                         </div>
                     </div>
                 </div>
@@ -338,4 +296,17 @@
             $('a[id="home-nav"]').attr('class', 'active');
         });
     </script>
+@endsection
+@section('custom-css')
+<style>
+    .img-client-section{
+        height: 100px;
+    }
+    .img-client{
+        height: 90px;
+        width: 300px;
+        padding: 9%;
+        margin: auto;
+    }
+</style>
 @endsection

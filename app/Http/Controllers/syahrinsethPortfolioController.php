@@ -15,7 +15,7 @@ class syahrinsethPortfolioController extends Controller
     }
 
     public function ajaxShow($id){
-        $portfolio = MasterPortfolio::leftjoin('portfolio_details', 'master_portfolios.id', '=', 'portfolio_details.masterportfolios_id')->where('master_portfolios.id', $id)->get();
+        $portfolio = MasterPortfolio::find($id);
         return response()->json($portfolio);
     }
 }

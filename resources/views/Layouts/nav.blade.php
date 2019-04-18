@@ -12,7 +12,7 @@
           <a href="/" >
            <div class="logo-container">
                 <div class="logo-main">
-                    <img src="../assets/paper_img/s-logo-white.png" alt="Thumbnail Image" class="img-responsive">
+                    <img src="/assets/paper_img/s-logo-white.png" alt="Thumbnail Image" class="img-responsive">
                 </div>
                 <div class="brand">
                     SYAHRIN SETH
@@ -46,14 +46,21 @@
                 <a href="{{route('/')}}#services" class="" id="services-nav">Services</a>
             </li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">About <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">More <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                 <li><a href="{{route('/')}}#aboutme">About Me</a></li>
                 <li><a href="{{route('/')}}#contact">Contact Me</a></li>
                 <li class="divider"></li>
-                <li><a href="https://www.github.com/syahrinseth" target="_blank" class="">GitHub <i class="fab fa-github"></i></a></li>
-                <li><a href="https://www.instagram.com/syahrinseth" target="_blank" class="">Instagram <i class="fab fa-instagram"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/syahrinseth/" target="_blank" class="">Linkedin <i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://www.github.com/syahrinseth" target="_blank" class=""><i class="fab fa-github"></i> GitHub</a></li>
+                <li><a href="https://www.instagram.com/syahrinseth" target="_blank" class=""><i class="fab fa-instagram"></i> Instagram</a></li>
+                <li><a href="https://www.linkedin.com/in/syahrinseth/" target="_blank" class=""><i class="fab fa-linkedin"></i> Linkedin</a></li>
+                <li class="divider"></li>
+                @if(Auth::user())
+                <li><a href="{{route('dashboard')}}"> Admin Dashboard</a></li>
+                <li><a href="{{route('logout')}}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                @else
+                <li><a href="{{route('login')}}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                @endif
                 <!-- <li><a href="#">Something else here</a></li>
                 <li class="divider"></li>
                 <li><a href="#">Separated link</a></li>

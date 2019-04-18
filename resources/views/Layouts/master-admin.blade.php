@@ -6,7 +6,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../admin-assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/paper_img/s-logo-blue.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Hi! I'm SYAHRIN SETH. A Software Engineer and a Martial Artist who design and code Web & Mobile Applications to life.">
+  <meta name="description" content="Syahrin Seth is a Malaysian Software Engineer and a Martial Artist who create web and mobile application to life.">
   <meta name="keywords" content="web development, website, code, software engineer, development, syahrinseth, syahrin seth, programmer, mobile development, mobile apps, web apps, martial arts, travel, freelance">
   <title>
     Admin - @yield('title')
