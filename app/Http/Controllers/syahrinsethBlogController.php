@@ -78,4 +78,11 @@ class syahrinsethBlogController extends Controller
         }
     }
 
+    public function deleteBlogComment(Request $request, $id){
+        $comment = BlogComment::findOrFail($id);
+        $comment->delete();
+        $request->session()->flash('alert-danger', 'Comment Deleted!');
+        return back();
+    }
+
 }

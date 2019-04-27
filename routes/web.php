@@ -21,6 +21,7 @@ Route::get('/blog/{slug}', 'syahrinsethBlogController@show')->name('show.blog');
 Route::get('/blog', 'syahrinsethBlogController@index')->name('index.blog');
 Route::get('/blog/category/{id}', 'syahrinsethBlogController@indexCategory')->name('indexCategory.blog');
 Route::post('/blog/create-blog-comment/{id}', 'syahrinsethBlogController@createBlogComment')->name('create_blog_comment.blog');
+Route::post('/blog/delete-blog-comment/{id}', 'syahrinsethBlogController@deleteBlogComment')->name('delete_blog_comment.blog');
 
 // Portfolio
 Route::get('/portfolio', 'syahrinsethPortfolioController@index')->name('index.portfolio');
@@ -51,6 +52,7 @@ Route::post('/admin-blog/update-post/{id}', 'syahrinsethAdminBlogController@upda
 Route::get('/admin-blog/delete/{id}', 'syahrinsethAdminBlogController@delete')->name('delete.adminblog');
 Route::post('/admin-blog/destroy/{id}', 'syahrinsethAdminBlogController@destroy')->name('destroy.adminblog');
 Route::get('/admin-blog/{slug}/', 'syahrinsethAdminBlogController@show')->name('show.adminblog');
+
 
 // Message
 // Route::get('/admin-message', 'syahrinsethAdminMessageController@index')->name('index.adminmessage');
