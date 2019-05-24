@@ -28,8 +28,8 @@ Route::get('/portfolio', 'syahrinsethPortfolioController@index')->name('index.po
 Route::get('/portfolio/{id}', 'syahrinsethPortfolioController@show')->name('show.portfolio');
 Route::get('/portfolio/ajax-show/{id}', 'syahrinsethPortfolioController@ajaxShow')->name('ajaxShow.portfolio');
 
-
-
+// Mini Games
+Route::get('/mini-games/{gameName}', 'MiniGamesController@colorGame')->name('miniGames.colorGame');
 
 
 

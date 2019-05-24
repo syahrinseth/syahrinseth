@@ -49,7 +49,7 @@
                     <div class="row">
                         <div class="col-md-6" id="website-design">
                             <div><i class="fab fa-wordpress fa-7x"></i></div>
-                            <h2>Website Design</h2>
+                            <h2>Website Development</h2>
                             <h5>Wordpress is web software that allows you to manage your own content, log into your website to blog, and upload media and update your own website. The websites I design will incorporate Wordpress so you can change your site anytime you want, at no cost.</h5>
                             <br />
                             <a href="{{route('/')}}#contact" class="btn">Contact Me</a>
@@ -68,13 +68,13 @@
                             <br />
                             <a href="{{route('/')}}#contact" class="btn">Contact Me</a>
                         </div> -->
-                        <div class="col-md-6" id="martial-arts-coaching">
+                        <!-- <div class="col-md-6" id="martial-arts-coaching">
                             <div><i class="fas fa-stopwatch fa-7x"></i></div>
                             <h2>Taekwon-do and Kickboxing Personal Training</h2>
                             <h5></h5>
                             <br />
-                            <a href="{{route('/')}}#contact" class="btn">Contact Me</a>
-                        </div>
+                            <a href="{{--route('/')--}}#contact" class="btn">Contact Me</a>
+                        </div> -->
 
                         <!-- <div class="col-md-4" id="graphicdesign">
                             <div><i class="fas fa-pencil-alt fa-7x"></i></div>
