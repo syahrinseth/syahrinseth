@@ -21,14 +21,15 @@ Route::get('/blog/{slug}', 'syahrinsethBlogController@show')->name('show.blog');
 Route::get('/blog', 'syahrinsethBlogController@index')->name('index.blog');
 Route::get('/blog/category/{id}', 'syahrinsethBlogController@indexCategory')->name('indexCategory.blog');
 Route::post('/blog/create-blog-comment/{id}', 'syahrinsethBlogController@createBlogComment')->name('create_blog_comment.blog');
+Route::post('/blog/delete-blog-comment/{id}', 'syahrinsethBlogController@deleteBlogComment')->name('delete_blog_comment.blog');
 
 // Portfolio
 Route::get('/portfolio', 'syahrinsethPortfolioController@index')->name('index.portfolio');
 Route::get('/portfolio/{id}', 'syahrinsethPortfolioController@show')->name('show.portfolio');
 Route::get('/portfolio/ajax-show/{id}', 'syahrinsethPortfolioController@ajaxShow')->name('ajaxShow.portfolio');
 
-
-
+// Mini Games
+Route::get('/mini-games/{gameName}', 'MiniGamesController@colorGame')->name('miniGames.colorGame');
 
 
 
@@ -52,6 +53,7 @@ Route::get('/admin-blog/delete/{id}', 'syahrinsethAdminBlogController@delete')->
 Route::post('/admin-blog/destroy/{id}', 'syahrinsethAdminBlogController@destroy')->name('destroy.adminblog');
 Route::get('/admin-blog/{slug}/', 'syahrinsethAdminBlogController@show')->name('show.adminblog');
 
+
 // Message
 // Route::get('/admin-message', 'syahrinsethAdminMessageController@index')->name('index.adminmessage');
 // Route::get('/admin-message/{id}', 'syahrinsethAdminMessageController@show')->name('show.adminmessage');
@@ -69,3 +71,30 @@ Route::post('admin-portfolio/update/{id}', 'syahrinsethAdminPortfolioController@
 Route::get('admin-portfolio/delete/{id}', 'syahrinsethAdminPortfolioController@delete')->name('delete.adminportfolio');
 Route::post('admin-portfolio/destroy/{id}', 'syahrinsethAdminPortfolioController@destroy')->name('destroy.adminportfolio');
 // --------------------------------------------------------------------------
+
+//Alternate route for access storage file due to cpanel hosting security issue
+Route::get('storage/portfolio/{filename}', function ($filename)
+{
+    if (!Storage::exists('public/portfolio/'.$filename)) {
+        abort(404);
+    }
+    $file = Storage::get('public/portfolio/'.$filename);
+    $type = Storage::mimeType('public/portfolio/'.$filename);
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+
+    return $response;
+});
+
+Route::get('storage/blog/{filename}', function ($filename)
+{
+    if (!Storage::exists('public/blog/'.$filename)) {
+        abort(404);
+    }
+    $file = Storage::get('public/blog/'.$filename);
+    $type = Storage::mimeType('public/blog/'.$filename);
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+
+    return $response;
+});
