@@ -160,8 +160,47 @@
                             <img src="../assets/paper_img/syahrinseth2.jpg" alt="Thumbnail Image" class="img-circle img-responsive">
                             <h5>Syahrin Seth <br /><small class="">Web Developer & Martial Artist</small></h5>
                             <!-- <h6>I'm Syah, a Web Application Developer and Photographer based in Shah Alam, MY.</h6> -->
-                            <p class="text-center">Syahrin Seth is a software engineer and martial artist, who currently working as a software engineer who specialised in web and mobile application development. He is also a martial arts coach who train people taekwon-do and kickboxing.<br>
+                            <p class="text-center">
+                            I am full stack Laravel / ASP.NET Core / Angular web developer with 2 years of experience as a professional and 5 years of experience as a hobby. I value good working atmosphere and main factors for a successful project are good task management, work organization and attention to details. I don't just code to make it work, I code to make my code simple, easy and readable. I always follow proper coding styles, best coding practices and select tools and technologies that will suit the best for a particular task. I am also a martial arts coach who train people taekwon-do and kickboxing.
                             </p>
+
+                            <h3>My experience and technologies stack:</h3>
+
+                            <h3>Front End development</h3>
+
+                            <ul class="text-left">
+                                <li>JavaScript frameworks: Angular</li>
+                                <li>Experience with vanilla JavaScript coding as well as using transpilers: ES2016 (Babel), TypeScript</li>
+                                <li>HTML & CSS responsive, using Twitter Bootstrap</li>
+                                <li>Experience with popular packages: sliders, carousels, etc. possibility to make modification in design and in the workflow of any package</li>
+                                <li>Coding with jQuery, jQuery UI</li>
+                                <li>Other: Node.js, npm, Ajax, JSLint, ESLint, JSON, XML</li>
+                            </ul>
+
+
+                            <h3>Back End development</h3>
+
+                            <ul class="text-left">
+                                <li>Strong PHP OOP coding approach with clean code</li>
+                                <li>PHP frameworks: Laravel Framework</li>
+                                <li>Experience with ASP.NET/Core framework</li>
+                                <li>Databases: MySql, MSSQL, SQLite</li>
+                                <li>HTTP protocol: requests, responses, headers, codes, mimes</li>
+                                <li>ORMs and Active Records: Laravel Eloquent</li>
+                                <li>Developing RESTful Web Services API (JSON, XML)</li>
+                                <li>Version control systems: GIT, GitHub, Bitbucket</li>
+                                <li>Experience with popular social networks APIs (Google, Facebook, Instagram)</li>
+                                <li>Experience with Payment APIs: Paypal</li>
+                            </ul>
+
+                            <h3>Other</h3>
+                            <ul class="text-left">
+                                <li>Configurations for: Apache, IIS, MySql, MSSQL, vim and others</li>
+                                <li>Experience with cPanel, Windows Server</li>
+                                <li>MacOs, Windows Os, Photoshop, Illustrator, MS Office suite - experienced user</li>
+                            </ul>
+
+                            <br>
 
                         </div>
                     </div>
