@@ -40,7 +40,7 @@
                 </ul> -->
             </li>
             <li>
-                <a href="{{route('index.blog')}}" class="" id="blog-nav">Blog</a>
+                <a href="https://blog.syahrinseth.com" class="" id="blog-nav">Blog</a>
             </li>
             <li>
                 <a href="{{route('/')}}#services" class="" id="services-nav">Services</a>
@@ -51,7 +51,7 @@
                 <li><a href="{{route('/')}}#aboutme">About Me</a></li>
                 <li><a href="{{route('/')}}#contact">Contact Me</a></li>
                 <li class="divider"></li>
-                <li><a href="{{route('miniGames.colorGame', ['gameName' => 'COLORGAME'])}}" target="_blank"><i class="fas fa-gamepad"></i> Mini Games</a></li>
+                <li><a href="{{route('miniGames.index')}}"><i class="fas fa-gamepad"></i> Mini Games</a></li>
                 <li><a href="https://www.github.com/syahrinseth" target="_blank" class=""><i class="fab fa-github"></i> GitHub</a></li>
                 <li><a href="https://www.instagram.com/syahrinseth" target="_blank" class=""><i class="fab fa-instagram"></i> Instagram</a></li>
                 <li><a href="https://www.linkedin.com/in/syahrinseth/" target="_blank" class=""><i class="fab fa-linkedin"></i> Linkedin</a></li>

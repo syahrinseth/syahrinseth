@@ -158,7 +158,7 @@
                     <div class="col-md-10 col-md-offset-1">
                         <div class="team-player">
                             <img src="../assets/paper_img/syahrinseth2.jpg" alt="Thumbnail Image" class="img-circle img-responsive">
-                            <h5>Syahrin Seth <br /><small class="">Software Engineer & Martial Artist</small></h5>
+                            <h5>Syahrin Seth <br /><small class="">Web Developer & Martial Artist</small></h5>
                             <!-- <h6>I'm Syah, a Web Application Developer and Photographer based in Shah Alam, MY.</h6> -->
                             <p class="text-center">Syahrin Seth is a software engineer and martial artist, who currently working as a software engineer who specialised in web and mobile application development. He is also a martial arts coach who train people taekwon-do and kickboxing.<br>
                             </p>

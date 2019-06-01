@@ -5,7 +5,7 @@
 	<link rel="icon" type="image/png" href="../assets/paper_img/s-logo-blue.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="google-site-verification" content="w3q-0j_FB_tB2Sqj_UBZUlDHVq9tDFbs7pdrLsgl4d0" />
-	<meta name="description" content="Syahrin Seth is a Malaysian Software Engineer and a Martial Artist who create web and mobile application to life.">
+	<meta name="description" content="Syahrin Seth is a Malaysian Web Developer and a Martial Artist who create web and mobile application to life.">
 	<meta name="keywords" content="web development, website, code, software engineer, development, syahrinseth, syahrin seth, programmer, mobile development, mobile apps, web apps, martial arts, travel, freelance">
 
 	<title>Syahrin Seth - @yield('title')</title>
@@ -42,6 +42,16 @@
 
     </style>
     @yield('custom-css')
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-87095715-2"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-87095715-2');
+    gtag('set', {'user_id': 'USER_ID'}); // Set the user ID using signed-in user_id.
+    </script>
 
 </head>
 <body>

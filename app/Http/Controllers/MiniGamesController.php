@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class MiniGamesController extends Controller
 {
+    public function index(){
+        return view('minigames.index');
+    }
+
     public function colorGame($gameName){
         switch (strtoupper($gameName)) {
             case 'COLORGAME':

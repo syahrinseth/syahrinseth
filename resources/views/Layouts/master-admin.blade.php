@@ -6,7 +6,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../admin-assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/paper_img/s-logo-blue.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Syahrin Seth is a Malaysian Software Engineer and a Martial Artist who create web and mobile application to life.">
+  <meta name="description" content="Syahrin Seth is a Malaysian Web Developer and a Martial Artist who create web and mobile application to life.">
   <meta name="keywords" content="web development, website, code, software engineer, development, syahrinseth, syahrin seth, programmer, mobile development, mobile apps, web apps, martial arts, travel, freelance">
   <title>
     Admin - @yield('title')
@@ -75,6 +75,16 @@
 
   </script>
   @yield('custom-javascript')
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-87095715-2"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-87095715-2');
+    gtag('set', {'user_id': 'USER_ID'}); // Set the user ID using signed-in user_id.
+    </script>
 </body>
 
 </html>

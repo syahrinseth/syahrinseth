@@ -29,7 +29,8 @@ Route::get('/portfolio/{id}', 'syahrinsethPortfolioController@show')->name('show
 Route::get('/portfolio/ajax-show/{id}', 'syahrinsethPortfolioController@ajaxShow')->name('ajaxShow.portfolio');
 
 // Mini Games
-Route::get('/mini-games/{gameName}', 'MiniGamesController@colorGame')->name('miniGames.colorGame');
+Route::get('/games', 'MiniGamesController@index')->name('miniGames.index');
+Route::get('/games/{gameName}', 'MiniGamesController@colorGame')->name('miniGames.colorGame');
 
 
 
