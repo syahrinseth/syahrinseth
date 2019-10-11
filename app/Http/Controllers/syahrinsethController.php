@@ -20,7 +20,7 @@ class syahrinsethController extends Controller
     {
         // Home page);
         $portfoliosRand = MasterPortfolio::inRandomOrder()->take(3)->get();
-        return view('welcome', compact('portfoliosRand', 'visitor'));
+        return view('welcome', compact('portfoliosRand'));
     }
 
     /**
